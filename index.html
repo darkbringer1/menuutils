@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MenuUtils — A modular macOS menu-bar utility</title>
+  <meta name="description" content="MenuUtils consolidates power-user macOS utilities — system monitoring, clipboard history, meeting transcription, app uninstaller, and Xcode cleanup — into one menu-bar app.">
+  <meta property="og:title" content="MenuUtils">
+  <meta property="og:description" content="A modular macOS menu-bar utility. System monitoring, clipboard history, meeting transcription, app uninstaller, and Xcode cleanup in one app.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menuutils.dogukaan.dev">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">M</span> MenuUtils</a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
+      <a href="/#download">Download</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero container">
+  <h1>One menu bar. Every utility you reach for.</h1>
+  <p class="tagline">
+    MenuUtils is a modular macOS menu-bar platform that consolidates the
+    power-user tools you keep open all day — system monitoring, clipboard
+    history, meeting transcription, app uninstaller, and Xcode cleanup — into a
+    single, calm, native app.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#download">Download for Mac</a>
+    <a class="btn btn-secondary" href="#features">See what's inside</a>
+    <span class="badge-os">macOS 26.0 or later · Apple Silicon</span>
+  </div>
+
+  <div class="hero-art" aria-hidden="true">
+    <span class="chip"><span class="dot s"></span> CPU 12%</span>
+    <span class="chip"><span class="dot"></span> Memory 6.4 GB</span>
+    <span class="chip"><span class="dot s"></span> Disk 218 GB free</span>
+    <span class="chip"><span class="dot w"></span> Fan 2412 rpm</span>
+    <span class="chip"><span class="dot"></span> Clipboard · 142 items</span>
+    <span class="chip"><span class="dot s"></span> Net ↓ 4.2 MB/s</span>
+    <span class="chip"><span class="dot"></span> Transcription ● live</span>
+    <span class="chip"><span class="dot s"></span> DerivedData 8.1 GB</span>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="block container" id="features">
+  <div class="section-head">
+    <h2>What's inside</h2>
+    <p>Six modules, one host app. Each lives in the menu bar and can be turned on or off independently.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3><span class="icon">📊</span> System Monitor</h3>
+      <p>CPU, memory, disk, and GPU at a glance. Fan speed and temperature sensors on the direct build. Purge memory to reclaim RAM.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon">🌐</span> Network Monitor</h3>
+      <p>Live upload/download throughput, per-interface breakdowns, and week/month history with compaction tiers.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon">📋</span> Clipboard Manager</h3>
+      <p>Searchable clipboard history with sensitive-content detection, pinning, and a global ⌘⇧V shortcut that works everywhere.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon">🎙️</span> Meeting Transcription</h3>
+      <p>Live on-device speech-to-text for meetings. Audio never leaves your Mac — transcription runs locally with the Speech framework.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon">🗑️</span> App Uninstaller</h3>
+      <p>Move applications to Trash along with their support files. User-selected folders only — no hardcoded path scanning.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon">🧹</span> Xcode Cleaner</h3>
+      <p>Reclaim disk space from DerivedData and related caches. Reaches them only through a bookmark you grant explicitly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Editions -->
+<section class="block container" id="editions">
+  <div class="section-head">
+    <h2>Two editions, one codebase</h2>
+    <p>MenuUtils ships on two lanes. The direct download is the fuller product; the Mac App Store edition is sandboxed and trimmed where the sandbox forbids.</p>
+  </div>
+  <div class="table-wrap">
+    <table class="matrix">
+      <thead>
+        <tr><th>Capability</th><th>Direct download</th><th>Mac App Store</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="cap">CPU / memory / disk / GPU monitoring</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Fan speed &amp; temperature sensors</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">Memory purge</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">Global clipboard shortcut</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Crash auto-restart</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">Self-update (Sparkle)</td><td class="yes">Yes</td><td class="no">Via App Store</td></tr>
+        <tr><td class="cap">App uninstaller &amp; Xcode cleanup</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Meeting transcription (on-device)</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Sandboxed</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Notarized &amp; stapled</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Download -->
+<section class="block container" id="download">
+  <div class="section-head">
+    <h2>Download</h2>
+    <p>The direct download is the complete edition, notarized and stapled. The Mac App Store edition will be linked once it is approved.</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3><span class="icon">⬇️</span> Direct download</h3>
+      <p>The full edition with sensors, memory purge, crash auto-restart, and Sparkle self-updates. Notarized Developer ID build.</p>
+      <div class="cta-row" style="margin-top:16px;">
+        <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/latest">Get the latest DMG</a>
+        <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases">All releases</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="icon"></span> Mac App Store</h3>
+      <p>The sandboxed edition. Sandboxed-safe features only; updates through the App Store.</p>
+      <div class="cta-row" style="margin-top:16px;">
+        <span class="badge-os">Coming soon</span>
+      </div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:24px;">
+    <strong>Verify the download.</strong> On first launch, macOS will Gatekeeper-check the notarization. If you want to verify manually:
+    <code>spctl --assess --type open --context context:primary-signature -vv MenuUtils.dmg</code>
+  </div>
+</section>
+
+<!-- Privacy teaser -->
+<section class="block container">
+  <div class="section-head">
+    <h2>Private by design</h2>
+    <p>MenuUtils does not collect, transmit, or share personal data. Speech recognition runs on-device. Clipboard history and transcripts stay on your Mac. No accounts, no analytics, no tracking SDKs.</p>
+  </div>
+  <a class="btn btn-secondary" href="/privacy">Read the privacy policy</a>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>© 2026 MenuUtils. All rights reserved.</span>
+    <span>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/support">Support</a> ·
+      <a href="https://github.com/darkbringer1/menuutils/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

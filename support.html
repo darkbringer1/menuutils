@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — MenuUtils</title>
+  <meta name="description" content="Get help with MenuUtils, report a problem, or check system requirements.">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">M</span> MenuUtils</a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#download">Download</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding:64px 24px 0;">
+
+<article class="prose">
+  <h1>Support</h1>
+  <p class="meta">Last updated: 2026-08-18</p>
+
+  <p class="lede">Running into trouble? Here's how to get help and a few things worth knowing first.</p>
+
+  <h2>System requirements</h2>
+  <ul>
+    <li>macOS 26.0 or later</li>
+    <li>Apple Silicon (Mac with M-series chip)</li>
+    <li>Direct build: notarized and stapled, no sandbox</li>
+    <li>App Store build: sandboxed, reduced feature set</li>
+  </ul>
+
+  <h2>First-run setup</h2>
+  <p>MenuUtils lives in the menu bar. On first launch you'll be guided through enabling the modules you want and granting any permissions they need. Permissions can always be changed later in <strong>MenuUtils → Preferences → Permissions</strong> or in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+  <p>Modules that read files (App Uninstaller, Xcode Cleaner) ask you to pick the folders they may access via macOS security-scoped bookmarks. They cannot read folders you have not granted.</p>
+
+  <h2>Common issues</h2>
+
+  <h3>"MenuUtils can't be opened because it is from an unidentified developer"</h3>
+  <p>This means Gatekeeper did not see the notarization ticket. The direct download is notarized and stapled. Right-click the app and choose <strong>Open</strong> the first time, or run:</p>
+  <p><code>xcrun stapler validate MenuUtils.app</code></p>
+  <p>If validation fails, re-download from the <a href="https://github.com/darkbringer1/menuutils/releases/latest">latest release</a> — the DMG may have been truncated.</p>
+
+  <h3>Clipboard shortcut (⌘⇧V) doesn't work</h3>
+  <p>The direct build uses an Accessibility event tap; grant <strong>Accessibility</strong> permission in System Settings → Privacy &amp; Security. The App Store build uses a Carbon hot key and does not need Accessibility access.</p>
+
+  <h3>Fan speed or temperature not showing</h3>
+  <p>Sensor reads require the direct (non-sandboxed) build. This is expected — the Mac App Store edition does not show SMC sensors.</p>
+
+  <h3>Transcription produces no text</h3>
+  <p>Grant <strong>Microphone</strong>, <strong>Screen Recording</strong> (for system audio), and <strong>Speech Recognition</strong> permissions. On-device recognition must be available for your selected language; pick a supported locale in Meeting Transcription settings.</p>
+
+  <h2>Report a bug</h2>
+  <p>Email <a href="mailto:support@dogukaan.dev">support@dogukaan.dev</a> with:</p>
+  <ul>
+    <li>MenuUtils version (see Preferences → About)</li>
+    <li>Edition (direct download or Mac App Store)</li>
+    <li>macOS version and Mac model</li>
+    <li>Steps to reproduce</li>
+  </ul>
+  <p>Please do not send clipboard contents, transcripts, or other personal data — they are not needed to diagnose issues and we do not want them.</p>
+
+  <h2>Updates</h2>
+  <p>The direct build checks for updates automatically once a day via Sparkle, or on demand from <strong>Preferences → Updates</strong>. The App Store build updates through the App Store.</p>
+
+  <h2>Uninstall</h2>
+  <p>MenuUtils can uninstall itself: open <strong>App Uninstaller</strong>, select MenuUtils, and move it to Trash. Preferences and on-device databases live in <code>~/Library/Application Support/MenuUtils</code> and <code>~/Library/Preferences/com.dogukaan.menukit.plist</code> — remove those to clear all data.</p>
+
+  <div class="callout">
+    MenuUtils collects no data, so there is no account to delete and no data to
+    request. Everything is on your Mac and removable by deleting the app and
+    its support files above.
+  </div>
+</article>
+
+</main>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>© 2026 MenuUtils. All rights reserved.</span>
+    <span>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/support">Support</a> ·
+      <a href="https://github.com/darkbringer1/menuutils/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

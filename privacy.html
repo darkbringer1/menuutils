@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — MenuUtils</title>
+  <meta name="description" content="MenuUtils does not collect, transmit, or share personal data. Everything stays on your Mac.">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><span class="brand-mark">M</span> MenuUtils</a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#download">Download</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding:64px 24px 0;">
+
+<article class="prose">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: 2026-08-18</p>
+
+  <p class="lede">
+    MenuUtils is a macOS menu-bar utility. The short version: <strong>MenuUtils
+    does not collect, transmit, or share personal data. Everything you do in
+    the app stays on your Mac.</strong>
+  </p>
+
+  <h2>Data we do not collect</h2>
+  <p>MenuUtils does <strong>not</strong> collect, aggregate, sell, share, or transmit:</p>
+  <ul>
+    <li>Personal identifiers (name, email, account details)</li>
+    <li>Device identifiers or advertising identifiers</li>
+    <li>Usage analytics or product telemetry</li>
+    <li>Crash reports (none are uploaded by the app)</li>
+    <li>Location data</li>
+    <li>Contact or calendar data</li>
+    <li>Any information about you to any third party</li>
+  </ul>
+  <p>The app has <strong>no accounts</strong>, <strong>no login</strong>, <strong>no advertising</strong>, and <strong>no third-party analytics or tracking SDKs</strong>.</p>
+
+  <h2>Data stored locally on your Mac</h2>
+  <p>Some features store data on your Mac so they can function. This data never leaves your device:</p>
+  <table>
+    <thead><tr><th>Feature</th><th>What is stored</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td>Clipboard Manager</td><td>Clipboard history entries you copy</td><td>On-device SQLite database (GRDB)</td></tr>
+      <tr><td>Meeting Transcription</td><td>Transcripts and session metadata</td><td>On-device SQLite database (GRDB)</td></tr>
+      <tr><td>Preferences</td><td>Theme, per-module enablement, settings</td><td><code>UserDefaults</code></td></tr>
+      <tr><td>Impact ledger</td><td>Aggregate counts (GB saved, items processed)</td><td>On-device storage</td></tr>
+    </tbody>
+  </table>
+  <p>The Clipboard Manager and Meeting Transcription features can hold sensitive content (for example, text you copy, or meeting audio you transcribe). This content is processed and stored <strong>only on your Mac</strong>. You can delete it at any time from within each module's settings.</p>
+
+  <h2>On-device processing</h2>
+  <p>All processing happens on your Mac:</p>
+  <ul>
+    <li><strong>Speech recognition</strong> in Meeting Transcription uses Apple's Speech framework with on-device recognition enabled. Live audio is captured by ScreenCaptureKit and transcribed locally; <strong>audio is never sent to a server</strong> for transcription.</li>
+    <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner, Network Monitor) only reads files in folders you explicitly grant access to through macOS security-scoped bookmarks. The app cannot read files you have not granted access to.</li>
+  </ul>
+
+  <h2>Permissions the app requests</h2>
+  <p>MenuUtils requests these macOS permissions, each for a specific purpose:</p>
+  <table>
+    <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Microphone</td><td>Capture live audio for meeting transcription</td></tr>
+      <tr><td>Screen Recording</td><td>Capture system audio from meeting apps</td></tr>
+      <tr><td>Speech Recognition</td><td>Turn live audio into a transcript on-device</td></tr>
+      <tr><td>User-Selected File Access</td><td>Read and manage folders you choose (App Uninstaller, Xcode Cleaner)</td></tr>
+      <tr><td>App Management</td><td>Move selected application bundles to Trash (App Uninstaller)</td></tr>
+    </tbody>
+  </table>
+  <p>Each permission is requested only when you enable the relevant feature, and each can be revoked at any time in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+
+  <h2>Required Reason API declarations</h2>
+  <p>MenuUtils accesses a small number of macOS APIs that Apple requires to be declared in a privacy manifest (<code>PrivacyInfo.xcprivacy</code>). The approved reasons are:</p>
+  <ul>
+    <li><strong>UserDefaults</strong> (<code>CA92.1</code>) — storing the app's own preferences.</li>
+    <li><strong>Disk space</strong> (<code>85F4.1</code>) — displaying free and used disk space to you in System Monitor.</li>
+    <li><strong>File timestamps</strong> (<code>DDA9.1</code>, <code>3B52.1</code>) — showing and sorting by "last modified" in App Uninstaller, on files inside folders you granted access to.</li>
+  </ul>
+  <p>None of the information accessed through these APIs is sent off-device.</p>
+
+  <h2>Software updates (direct-distribution build only)</h2>
+  <p>The version of MenuUtils distributed directly from our website checks for updates using <a href="https://sparkle-project.org">Sparkle</a>. To check for updates, the app makes a standard HTTPS request to the update feed URL on our website. The only information exposed by this request is standard HTTP metadata (such as your IP address and a generic user-agent string) that any web request reveals to the host. <strong>No usage data, identifiers, or clipboard/transcript content is ever sent.</strong></p>
+  <p>The Mac App Store version does not include this update mechanism; it updates through the App Store.</p>
+
+  <h2>Children's privacy</h2>
+  <p>MenuUtils is a developer/utility tool and is not directed at children. The app does not knowingly collect any data from anyone, including children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted on this page with a new effective date. For significant changes, the app will link to the updated policy from within the app.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy, contact:</p>
+  <p><strong>MenuUtils</strong><br>Email: <a href="mailto:support@dogukaan.dev">support@dogukaan.dev</a></p>
+
+  <div class="callout">
+    This policy is mirrored in the app's Privacy Nutrition Label in App Store
+    Connect and in the on-device privacy manifest. If any of these three ever
+    disagree, the on-device behavior is authoritative.
+  </div>
+</article>
+
+</main>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>© 2026 MenuUtils. All rights reserved.</span>
+    <span>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/support">Support</a> ·
+      <a href="https://github.com/darkbringer1/menuutils/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
