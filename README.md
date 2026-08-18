@@ -26,19 +26,23 @@ GitHub Pages issues a Let's Encrypt certificate once the CNAME resolves. Enable
 
 ## Release workflow (direct distribution)
 
-1. In the private MenuKit repo: `make release-direct` builds, notarizes, staples,
-   and produces `dist/direct/MenuUtils-<version>.dmg` plus a local appcast.
-2. Create a GitHub Release on this repo (tag `v<version>`), upload the DMG as an
-   asset. Copy the asset download URL.
-3. Regenerate `appcast.xml` with the public enclosure URL and the EdDSA
-   signature from Sparkle's `sign_update`, then commit and push. The feed is
-   live immediately.
-4. `SUFeedURL` in `App/Sources/Info-Direct.plist` points at
-   `https://menuutils.dogukaan.dev/appcast.xml`. `SUPublicEDKey` must match the
-   key used to sign every appcast.
+Releases are driven entirely from the **private** MenuKit repo. This public
+repo is touched only by automation — push a tag `v<version>` there (or run its
+`Release (direct)` workflow) and it:
 
-A signed appcast whose key does not match `SUPublicEDKey` means updates silently
-never install. A new DMG without a matching appcast update reaches nobody.
+1. Builds, notarizes, staples, and packages the DMG.
+2. Creates a GitHub Release on **this** repo and uploads the DMG as an asset.
+3. Regenerates `appcast.xml` with the public enclosure URL and the EdDSA
+   signature, then commits and pushes `appcast.xml` here.
+
+You should rarely edit this repo manually — only for site/feature updates.
+Required secrets and the full step list live in
+`.github/workflows/release-direct.yml` in the private MenuKit repo.
+
+`SUFeedURL` in `App/Sources/Info-Direct.plist` points at
+`https://menuutils.dogukaan.dev/appcast.xml`. `SUPublicEDKey` must match the
+key used to sign every appcast. A mismatch means updates silently never install;
+a new DMG without a matching appcast update reaches nobody.
 
 ## Mac App Store
 
