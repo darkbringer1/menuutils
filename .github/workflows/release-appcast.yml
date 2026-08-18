@@ -1,0 +1,91 @@
+name: Update Sparkle appcast
+
+# Regenerates appcast.xml for a new direct-distribution release.
+#
+# Triggered manually (workflow_dispatch) from the private MenuKit repo's
+# release step, or from a local release script, with the values that Sparkle's
+# `sign_update` produced. The EdDSA PRIVATE key never enters this repo — only
+# the public signature string does, which is safe to publish.
+#
+# Required inputs:
+#   version     — e.g. 1.0.0           (sparkle:shortVersionString)
+#   build       — e.g. 1               (sparkle:version, integer)
+#   dmg_url     — public GitHub Release asset URL for the DMG
+#   ed_signature— output of `sign_update` (the edSignature hex string)
+#   length      — DMG byte length (output of `sign_update`)
+#
+# Example trigger from the private repo / local machine:
+#   gh workflow run release-appcast.yml \
+#     -f version=1.0.0 -f build=1 \
+#     -f dmg_url=https://github.com/darkbringer1/menuutils/releases/download/v1.0.0/MenuUtils-1.0.0.dmg \
+#     -f ed_signature=<hex> -f length=<bytes>
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Marketing version (e.g. 1.0.0)"
+        required: true
+      build:
+        description: "Build number (integer)"
+        required: true
+      dmg_url:
+        description: "Public DMG download URL"
+        required: true
+      ed_signature:
+        description: "EdDSA signature from sign_update"
+        required: true
+      length:
+        description: "DMG byte length"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-appcast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate appcast.xml
+        env:
+          VERSION: ${{ inputs.version }}
+          BUILD: ${{ inputs.build }}
+          DMG_URL: ${{ inputs.dmg_url }}
+          ED_SIG: ${{ inputs.ed_signature }}
+          LENGTH: ${{ inputs.length }}
+        run: |
+          set -euo pipefail
+          PUB_DATE=$(date -u "+%a, %d %b %Y %H:%M:%S +0000")
+          cat > appcast.xml <<EOF
+          <?xml version="1.0" standalone="yes"?>
+          <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+            <channel>
+              <title>MenuUtils</title>
+              <link>https://menuutils.dogukaan.dev/appcast.xml</link>
+              <description>Most recent changes to MenuUtils</description>
+              <language>en</language>
+              <item>
+                <title>Version ${VERSION}</title>
+                <pubDate>${PUB_DATE}</pubDate>
+                <sparkle:version>${BUILD}</sparkle:version>
+                <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
+                <sparkle:edSignature>${ED_SIG}</sparkle:edSignature>
+                <enclosure
+                  url="${DMG_URL}"
+                  sparkle:edSignature="${ED_SIG}"
+                  length="${LENGTH}"
+                  type="application/octet-stream" />
+              </item>
+            </channel>
+          </rss>
+          EOF
+
+      - name: Commit and push appcast
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add appcast.xml
+          git commit -m "Update appcast for v${{ inputs.version }} (build ${{ inputs.build }})"
+          git push
