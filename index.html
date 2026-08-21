@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MenuUtils — A modular macOS menu-bar utility</title>
-  <meta name="description" content="MenuUtils consolidates power-user macOS utilities — system monitoring, clipboard history, meeting transcription, app uninstaller, and Xcode cleanup — into one menu-bar app.">
+  <meta name="description" content="MenuUtils consolidates power-user macOS utilities — system monitoring, clipboard history, app uninstaller, and Xcode cleanup — into one menu-bar app.">
   <meta property="og:title" content="MenuUtils">
-  <meta property="og:description" content="A modular macOS menu-bar utility. System monitoring, clipboard history, meeting transcription, app uninstaller, and Xcode cleanup in one app.">
+  <meta property="og:description" content="A modular macOS menu-bar utility. System monitoring, clipboard history, app uninstaller, and Xcode cleanup in one app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuutils.dogukaan.dev">
   <link rel="stylesheet" href="/assets/style.css">
@@ -32,28 +32,33 @@
 
 <!-- Hero -->
 <section class="hero container">
-  <h1>One menu bar. Every utility you reach for.</h1>
-  <p class="tagline">
-    MenuUtils is a modular macOS menu-bar platform that consolidates the
-    power-user tools you keep open all day — system monitoring, clipboard
-    history, meeting transcription, app uninstaller, and Xcode cleanup — into a
-    single, calm, native app.
-  </p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="#download">Download for Mac</a>
-    <a class="btn btn-secondary" href="#features">See what's inside</a>
-    <span class="badge-os">macOS 26.0 or later · Apple Silicon</span>
-  </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot s pulse"></span> Menu bar platform for macOS</div>
+      <h1>One menu bar.<br>Every utility you reach for.</h1>
+      <p class="tagline">
+        MenuUtils is a modular macOS menu-bar platform that consolidates the
+        power-user tools you keep open all day — system monitoring, clipboard
+        history, app uninstaller, and Xcode cleanup — into a
+        single, calm, native app.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#download">Download for Mac</a>
+        <a class="btn btn-secondary" href="#features">See what's inside</a>
+      </div>
+      <span class="badge-os">macOS 26.0 or later · Apple Silicon</span>
 
-  <div class="hero-art" aria-hidden="true">
-    <span class="chip"><span class="dot s"></span> CPU 12%</span>
-    <span class="chip"><span class="dot"></span> Memory 6.4 GB</span>
-    <span class="chip"><span class="dot s"></span> Disk 218 GB free</span>
-    <span class="chip"><span class="dot w"></span> Fan 2412 rpm</span>
-    <span class="chip"><span class="dot"></span> Clipboard · 142 items</span>
-    <span class="chip"><span class="dot s"></span> Net ↓ 4.2 MB/s</span>
-    <span class="chip"><span class="dot"></span> Transcription ● live</span>
-    <span class="chip"><span class="dot s"></span> DerivedData 8.1 GB</span>
+      <div class="hero-facts">
+        <div><strong>5</strong> modules</div>
+        <div><strong>0</strong> accounts</div>
+        <div><strong>0</strong> telemetry</div>
+        <div>1 status item</div>
+      </div>
+    </div>
+
+    <div class="hero-shot">
+      <img src="/assets/screenshots/hero-stacked-modules.png" alt="MenuUtils menu bar panel showing Network Monitor, App Uninstaller, and Xcode Cleaner stacked in a single dropdown" width="824" height="1232" loading="eager">
+    </div>
   </div>
 </section>
 
@@ -61,32 +66,97 @@
 <section class="block container" id="features">
   <div class="section-head">
     <h2>What's inside</h2>
-    <p>Six modules, one host app. Each lives in the menu bar and can be turned on or off independently.</p>
+    <p>Five modules, one host app. Each lives in the menu bar and can be turned on or off independently — actual panels from the running app, not mockups.</p>
   </div>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3><span class="icon">📊</span> System Monitor</h3>
-      <p>CPU, memory, disk, and GPU at a glance. Fan speed and temperature sensors on the direct build. Purge memory to reclaim RAM.</p>
+
+  <div class="feature-row">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/system-monitor-detail.png" alt="System Monitor detail window showing per-core CPU utilization, GPU load, and memory pressure" loading="lazy">
     </div>
-    <div class="card">
-      <h3><span class="icon">🌐</span> Network Monitor</h3>
-      <p>Live upload/download throughput, per-interface breakdowns, and week/month history with compaction tiers.</p>
+    <div class="feature-copy">
+      <h3>System Monitor</h3>
+      <p>CPU, memory, disk, and GPU at a glance — with a detail window that goes as deep as Activity Monitor when you need it: per-core utilization, fan RPM, thermal state, top processes.</p>
+      <ul class="feature-list">
+        <li>Per-core CPU + GPU utilization</li>
+        <li>Fan speed &amp; temperature sensors</li>
+        <li>Memory purge to reclaim RAM</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3><span class="icon">📋</span> Clipboard Manager</h3>
-      <p>Searchable clipboard history with sensitive-content detection, pinning, and a global ⌘⇧V shortcut that works everywhere.</p>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/network-monitor-detail.png" alt="Network Monitor detail window showing a day of upload and download throughput as a line chart" loading="lazy">
     </div>
-    <div class="card">
-      <h3><span class="icon">🎙️</span> Meeting Transcription</h3>
-      <p>Live on-device speech-to-text for meetings. Audio never leaves your Mac — transcription runs locally with the Speech framework.</p>
+    <div class="feature-copy">
+      <h3>Network Monitor</h3>
+      <p>Live upload/download throughput in the menu bar, with hour/day/week/month history and per-interface breakdowns whenever you switch between Wi-Fi, Ethernet, and hotspot.</p>
+      <ul class="feature-list">
+        <li>Live speed with compaction-tiered history</li>
+        <li>Per-connection-type usage totals</li>
+        <li>Line, bar, and area chart views</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3><span class="icon">🗑️</span> App Uninstaller</h3>
-      <p>Move applications to Trash along with their support files. User-selected folders only — no hardcoded path scanning.</p>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/clipboard-manager.png" alt="Clipboard Manager showing searchable clipboard history with content-type filters" loading="lazy">
     </div>
-    <div class="card">
-      <h3><span class="icon">🧹</span> Xcode Cleaner</h3>
-      <p>Reclaim disk space from DerivedData and related caches. Reaches them only through a bookmark you grant explicitly.</p>
+    <div class="feature-copy">
+      <h3>Clipboard Manager</h3>
+      <p>Every copy you make, searchable and typed — links, code, colors, files, images — with a global shortcut that works from anywhere and sensitive content blurred until you ask for it.</p>
+      <ul class="feature-list">
+        <li>Content-kind detection &amp; filters</li>
+        <li>Sensitive-content blur, pinned entries</li>
+        <li>Global shortcut, no app switch needed</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/app-uninstaller-detail.png" alt="App Uninstaller window listing installed applications with reclaimable size, sorted largest first" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h3>App Uninstaller</h3>
+      <p>See every installed app sorted by size before you decide what goes. Moves the app bundle and its support files, caches, preferences, and containers to Trash — user-selected folders only.</p>
+      <ul class="feature-list">
+        <li>Size, name, or date sort across all apps</li>
+        <li>Support files, caches &amp; containers included</li>
+        <li>Nothing scanned outside folders you grant</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-shot feature-shot-compact">
+      <img src="/assets/screenshots/xcode-cleaner-popover.png" alt="Xcode Cleaner menu bar popover showing 70.28 GB reclaimable across 5 selected targets" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h3>Xcode Cleaner</h3>
+      <p>DerivedData, module caches, device support, and stale simulators — totalled before you delete a byte, and blocked from running while Xcode is open to keep your build state safe.</p>
+      <ul class="feature-list">
+        <li>Reclaim total shown before cleanup</li>
+        <li>Blocks cleanup while Xcode is running</li>
+        <li>Reaches caches only via a granted bookmark</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Customization -->
+<section class="block container">
+  <div class="section-head">
+    <h2>Yours to configure</h2>
+    <p>Every module ships with its own settings — menu bar display, thresholds, shortcuts — plus one place to see exactly what each module can access.</p>
+  </div>
+  <div class="grid grid-2">
+    <div class="config-shot">
+      <img src="/assets/screenshots/preferences-appearance.png" alt="Preferences window showing six accent theme choices: Amber, Ocean, Forest, Violet, Graphite, and Rose" loading="lazy">
+    </div>
+    <div class="config-shot">
+      <img src="/assets/screenshots/preferences-modules.png" alt="Preferences window listing all six modules with individual enable toggles" loading="lazy">
     </div>
   </div>
 </section>
@@ -110,7 +180,6 @@
         <tr><td class="cap">Crash auto-restart</td><td class="yes">Yes</td><td class="no">No</td></tr>
         <tr><td class="cap">Self-update (Sparkle)</td><td class="yes">Yes</td><td class="no">Via App Store</td></tr>
         <tr><td class="cap">App uninstaller &amp; Xcode cleanup</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-        <tr><td class="cap">Meeting transcription (on-device)</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
         <tr><td class="cap">Sandboxed</td><td class="no">No</td><td class="yes">Yes</td></tr>
         <tr><td class="cap">Notarized &amp; stapled</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
       </tbody>
@@ -151,7 +220,7 @@
 <section class="block container">
   <div class="section-head">
     <h2>Private by design</h2>
-    <p>MenuUtils does not collect, transmit, or share personal data. Speech recognition runs on-device. Clipboard history and transcripts stay on your Mac. No accounts, no analytics, no tracking SDKs.</p>
+    <p>MenuUtils does not collect, transmit, or share personal data. Clipboard history stays on your Mac. No accounts, no analytics, no tracking SDKs.</p>
   </div>
   <a class="btn btn-secondary" href="/privacy">Read the privacy policy</a>
 </section>
