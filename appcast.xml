@@ -3,12 +3,12 @@
     <channel>
         <title>MenuUtils</title>
         <item>
-            <title>0.0.20</title>
-            <pubDate>Sat, 22 Aug 2026 13:43:32 +0000</pubDate>
-            <sparkle:version>18</sparkle:version>
-            <sparkle:shortVersionString>0.0.20</sparkle:shortVersionString>
+            <title>0.0.21</title>
+            <pubDate>Sat, 22 Aug 2026 14:55:12 +0000</pubDate>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>0.0.21</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/darkbringer1/menuutils/releases/download/v0.0.20/MenuUtils-0.0.20.dmg" length="7529208" type="application/octet-stream" sparkle:edSignature="XwBWQaEhMx7DAyWOwT86jlljbaUBhO44DkL9EcvjLhoXwKvAVyr2f7v/4asYIjqlHxRc2xJy+os/ECAgph9XDw=="/>
+            <enclosure url="https://github.com/darkbringer1/menuutils/releases/download/v0.0.21/MenuUtils-0.0.21.dmg" length="7531259" type="application/octet-stream" sparkle:edSignature="yjd8RbDUpIxuTyb5mTB3bBfRX4NQ2JWo6qV3CYEHcX9UjIOELg4FtZbXN+We9effHXAaxgJ/VUBCBKJqQr2GAw=="/>
         </item>
     </channel>
 </rss>
