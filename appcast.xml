@@ -4,11 +4,11 @@
         <title>MenuUtils</title>
         <item>
             <title>1.0.0</title>
-            <pubDate>Sat, 22 Aug 2026 10:45:01 +0200</pubDate>
+            <pubDate>Sat, 22 Aug 2026 09:33:04 +0000</pubDate>
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/darkbringer1/menuutils/releases/download/v0.0.99-local-test/MenuUtils-0.0.99-local-test.dmg" length="7286787" type="application/octet-stream" sparkle:edSignature="/WIcdrA5fnQnUNc0SX/47uZ1M21cf/BU0zOw7uaRZuwOA0bBLTCXJjBd0nRUljUTUPg/bluJ5386zcomaj9mDQ=="/>
+            <enclosure url="https://github.com/darkbringer1/menuutils/releases/download/v0.0.15/MenuUtils-0.0.15.dmg" length="7400763" type="application/octet-stream" sparkle:edSignature="JNjdvlbgAK4dCi3JMJPklk5+/cGmBljHCGZeDCCnoDL7A5S06M2u3VdcPmE3NUZ/hi3IvWUuH2Vy5oig3YBAAQ=="/>
         </item>
     </channel>
 </rss>
