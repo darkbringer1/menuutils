@@ -14,9 +14,22 @@
 </head>
 <body>
 
+<!-- Iconoir icon sprite (MIT) — referenced via <use href="#ic-…"> -->
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M6 20L18 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-shopping-bag" viewBox="0 0 24 24"><path d="M19.2609 9.69589L20.6455 18.6959C20.8319 19.9074 19.8945 21 18.6688 21H5.33122C4.10545 21 3.16809 19.9074 3.35448 18.6959L4.73909 9.69589C4.8892 8.72022 5.7287 8 6.71584 8H17.2842C18.2713 8 19.1108 8.72022 19.2609 9.69589Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-wifi" viewBox="0 0 24 24"><path d="M12 19.51L12.01 19.4989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 8C8 3.5 16 3.5 22 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 12C9 9 15 9 19 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 15.5C10.7504 14.1 13.2498 14.0996 15.5001 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24"><path d="M8 15.4V8.6C8 8.26863 8.26863 8 8.6 8H15.4C15.7314 8 16 8.26863 16 8.6V15.4C16 15.7314 15.7314 16 15.4 16H8.6C8.26863 16 8 15.7314 8 15.4Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 4.6V19.4C20 19.7314 19.7314 20 19.4 20H4.6C4.26863 20 4 19.7314 4 19.4V4.6C4 4.26863 4.26863 4 4.6 4H19.4C19.7314 4 20 4.26863 20 4.6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 4V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 20V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 20V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 20V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17H22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12H22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7H22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 7H2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 8.5L3 12L6.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 8.5L21 12L17.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-paste-clipboard" viewBox="0 0 24 24"><path d="M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H15.5" stroke="currentColor" stroke-linecap="round"/><path d="M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z" stroke="currentColor" stroke-linecap="round"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="/"><span class="brand-mark">M</span> MenuUtils</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a84ff"/><stop offset="1" stop-color="#5e5ce6"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg> MenuUtils</a>
     <span class="nav-spacer"></span>
     <nav class="nav-links">
       <a href="/#features">Features</a>
@@ -43,10 +56,10 @@
         single, calm, native app.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#download">Download for Mac</a>
-        <a class="btn btn-secondary" href="#features">See what's inside</a>
+        <a class="btn btn-primary" href="#download"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
+        <a class="btn btn-secondary" href="#features">See what's inside <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-right"/></svg></a>
       </div>
-      <span class="badge-os">macOS 26.0 or later · Apple Silicon</span>
+      <span class="spec-line">macOS 26.0 or later · Apple Silicon</span>
 
       <div class="hero-facts">
         <div><strong>5</strong> modules</div>
@@ -65,6 +78,7 @@
 <!-- Features -->
 <section class="block container" id="features">
   <div class="section-head">
+    <div class="eyebrow">The modules</div>
     <h2>What's inside</h2>
     <p>Five modules, one host app. Each lives in the menu bar and can be turned on or off independently — actual panels from the running app, not mockups.</p>
   </div>
@@ -74,7 +88,7 @@
       <img src="/assets/screenshots/system-monitor-detail.png" alt="System Monitor detail window showing per-core CPU utilization, GPU load, and memory pressure" loading="lazy">
     </div>
     <div class="feature-copy">
-      <h3>System Monitor</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cpu"/></svg> System Monitor</h3>
       <p>CPU, memory, disk, and GPU at a glance — with a detail window that goes as deep as Activity Monitor when you need it: per-core utilization, fan RPM, thermal state, top processes.</p>
       <ul class="feature-list">
         <li>Per-core CPU + GPU utilization</li>
@@ -89,7 +103,7 @@
       <img src="/assets/screenshots/network-monitor-detail.png" alt="Network Monitor detail window showing a day of upload and download throughput as a line chart" loading="lazy">
     </div>
     <div class="feature-copy">
-      <h3>Network Monitor</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wifi"/></svg> Network Monitor</h3>
       <p>Live upload/download throughput in the menu bar, with hour/day/week/month history and per-interface breakdowns whenever you switch between Wi-Fi, Ethernet, and hotspot.</p>
       <ul class="feature-list">
         <li>Live speed with compaction-tiered history</li>
@@ -104,7 +118,7 @@
       <img src="/assets/screenshots/clipboard-manager.png" alt="Clipboard Manager showing searchable clipboard history with content-type filters" loading="lazy">
     </div>
     <div class="feature-copy">
-      <h3>Clipboard Manager</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-paste-clipboard"/></svg> Clipboard Manager</h3>
       <p>Every copy you make, searchable and typed — links, code, colors, files, images — with a global shortcut that works from anywhere and sensitive content blurred until you ask for it.</p>
       <ul class="feature-list">
         <li>Content-kind detection &amp; filters</li>
@@ -119,7 +133,7 @@
       <img src="/assets/screenshots/app-uninstaller-detail.png" alt="App Uninstaller window listing installed applications with reclaimable size, sorted largest first" loading="lazy">
     </div>
     <div class="feature-copy">
-      <h3>App Uninstaller</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg> App Uninstaller</h3>
       <p>See every installed app sorted by size before you decide what goes. Moves the app bundle and its support files, caches, preferences, and containers to Trash — user-selected folders only.</p>
       <ul class="feature-list">
         <li>Size, name, or date sort across all apps</li>
@@ -134,7 +148,7 @@
       <img src="/assets/screenshots/xcode-cleaner-popover.png" alt="Xcode Cleaner menu bar popover showing 70.28 GB reclaimable across 5 selected targets" loading="lazy">
     </div>
     <div class="feature-copy">
-      <h3>Xcode Cleaner</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg> Xcode Cleaner</h3>
       <p>DerivedData, module caches, device support, and stale simulators — totalled before you delete a byte, and blocked from running while Xcode is open to keep your build state safe.</p>
       <ul class="feature-list">
         <li>Reclaim total shown before cleanup</li>
@@ -148,6 +162,7 @@
 <!-- Customization -->
 <section class="block container">
   <div class="section-head">
+    <div class="eyebrow">Preferences</div>
     <h2>Yours to configure</h2>
     <p>Every module ships with its own settings — menu bar display, thresholds, shortcuts — plus one place to see exactly what each module can access.</p>
   </div>
@@ -164,6 +179,7 @@
 <!-- Editions -->
 <section class="block container" id="editions">
   <div class="section-head">
+    <div class="eyebrow">Editions</div>
     <h2>Two editions, one codebase</h2>
     <p>MenuUtils ships on two lanes. The direct download is the fuller product; the Mac App Store edition is sandboxed and trimmed where the sandbox forbids.</p>
   </div>
@@ -190,12 +206,13 @@
 <!-- Download -->
 <section class="block container" id="download">
   <div class="section-head">
+    <div class="eyebrow">Get it</div>
     <h2>Download</h2>
     <p>The direct download is the complete edition, notarized and stapled. The Mac App Store edition will be linked once it is approved.</p>
   </div>
   <div class="grid grid-2">
     <div class="card">
-      <h3><span class="icon">⬇️</span> Direct download</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Direct download</h3>
       <p>The full edition with sensors, memory purge, crash auto-restart, and Sparkle self-updates. Notarized Developer ID build.</p>
       <div class="cta-row" style="margin-top:16px;">
         <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/latest">Get the latest DMG</a>
@@ -203,10 +220,10 @@
       </div>
     </div>
     <div class="card">
-      <h3><span class="icon"></span> Mac App Store</h3>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shopping-bag"/></svg> Mac App Store</h3>
       <p>The sandboxed edition. Sandboxed-safe features only; updates through the App Store.</p>
       <div class="cta-row" style="margin-top:16px;">
-        <span class="badge-os">Coming soon</span>
+        <span class="pill">Coming soon</span>
       </div>
     </div>
   </div>
@@ -219,10 +236,11 @@
 <!-- Privacy teaser -->
 <section class="block container">
   <div class="section-head">
+    <div class="eyebrow">Privacy</div>
     <h2>Private by design</h2>
     <p>MenuUtils does not collect, transmit, or share personal data. Clipboard history stays on your Mac. No accounts, no analytics, no tracking SDKs.</p>
   </div>
-  <a class="btn btn-secondary" href="/privacy">Read the privacy policy</a>
+  <a class="btn btn-secondary" href="/privacy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shield"/></svg> Read the privacy policy</a>
 </section>
 
 </main>
