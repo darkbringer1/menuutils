@@ -1,9 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
-  <channel>
-    <title>MenuUtils</title>
-    <link>https://menuutils.dogukaan.dev/appcast.xml</link>
-    <description>Most recent changes to MenuUtils</description>
-    <language>en</language>
-  </channel>
+    <channel>
+        <title>MenuUtils</title>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Sat, 22 Aug 2026 10:45:01 +0200</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/darkbringer1/menuutils/releases/download/v0.0.99-local-test/MenuUtils-0.0.99-local-test.dmg" length="7286787" type="application/octet-stream" sparkle:edSignature="/WIcdrA5fnQnUNc0SX/47uZ1M21cf/BU0zOw7uaRZuwOA0bBLTCXJjBd0nRUljUTUPg/bluJ5386zcomaj9mDQ=="/>
+        </item>
+    </channel>
 </rss>
