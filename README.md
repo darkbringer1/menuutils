@@ -14,9 +14,20 @@ Issues and pull requests are not accepted here; for support see
   policy, and support page. Served from the repo root via GitHub Pages.
 - **Release downloads** — each MenuUtils release is published here as a GitHub
   Release; the notarized `.dmg` is a release asset.
+- **Release notes** at <https://menuutils.dogukaan.dev/releases> — generated
+  from commits included since the previous version tag.
 - **The update feed** at <https://menuutils.dogukaan.dev/appcast.xml> — the
   Sparkle appcast checked by the direct-download edition. Its enclosure URLs
   point at the matching GitHub Release asset.
+
+## Automated publishing
+
+The private application repository owns the release pipeline. Pushing a version
+tag builds and notarizes the app, publishes the DMG and SHA-256 checksum, updates
+the GitHub Release notes, and commits `appcast.xml`, `releases.json`,
+`releases.html`, and the homepage's latest-release card here. That commit
+triggers `.github/workflows/pages.yml` and deploys the complete release to the
+custom domain.
 
 ## Custom domain
 

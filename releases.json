@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "latest": "v0.0.33",
+  "releases": [
+    {
+      "version": "0.0.33",
+      "tag": "v0.0.33",
+      "publishedAt": "2026-09-01T17:34:22Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.33/MenuUtils-0.0.33.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.33",
+      "sha256": "ccaf98ff901a0ed015a046a22dcae155fd524c6b26a454344dd295ca24db6fd0",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Expose app uninstaller system permissions"
+            },
+            {
+              "title": "Enable meeting transcription in release builds"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
