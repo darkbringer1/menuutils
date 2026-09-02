@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.33",
+  "latest": "v0.0.34",
   "releases": [
+    {
+      "version": "0.0.34",
+      "tag": "v0.0.34",
+      "publishedAt": "2026-09-02T15:05:46Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.34/MenuUtils-0.0.34.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.34",
+      "sha256": "fcc4ac8dfc083c8c6da43722da6eb529424476dae6a7145996e5e8dd1baf32c1",
+      "sections": [
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Split live/final-pass transcription models, add non-blocking final pass and recording playback"
+            },
+            {
+              "title": "Preserve microphone entitlement during release signing"
+            },
+            {
+              "title": "Automate release notes and website publishing"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.33",
       "tag": "v0.0.33",
