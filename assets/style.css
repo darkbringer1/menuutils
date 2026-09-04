@@ -160,13 +160,19 @@ footer.site::before {
 }
 .hero h1 {
   font-size: clamp(44px, 7vw, 84px); line-height: 1.02; letter-spacing: -.045em;
-  margin: 22px 0 0; font-weight: 600; text-wrap: balance;
+  margin: 22px 0 0; font-weight: 600;
+  /* no text-wrap: balance — WebKit desyncs background-clip:text boxes on re-wrap */
 }
-/* Gradient text on the key phrase */
+/* Gradient text on the key phrase.
+   inline-block: the span owns its box, so the gradient box matches the glyph
+   box exactly — plain inline fragments misalign background-clip:text in WebKit.
+   -webkit-text-fill-color is Safari's honored way to make glyphs transparent. */
 .grad {
+  display: inline-block;
   background: linear-gradient(94deg, #fda4af 0%, #fb7185 40%, #e11d48 100%);
   -webkit-background-clip: text; background-clip: text;
-  color: transparent;
+  color: #fb7185; /* fallback if clip unsupported */
+  -webkit-text-fill-color: transparent;
 }
 .hero .tagline {
   font-size: 17px; line-height: 1.55; color: var(--fg2);
@@ -221,7 +227,9 @@ footer.site::before {
       radial-gradient(34rem 26rem at 86% 1rem, rgba(224,168,58,.05), transparent 62%);
   }
   .hero::after { opacity: .03; }
-  .grad { background: linear-gradient(94deg, #e11d48 0%, #f43f5e 55%, #9f1239 100%); }
+  /* background-image, NOT background — the shorthand resets background-clip
+     to border-box and the gradient paints as a solid box over the glyphs */
+  .grad { background-image: linear-gradient(94deg, #e11d48 0%, #f43f5e 55%, #9f1239 100%); }
   .hero-shot::before { background: radial-gradient(circle, rgba(225,29,72,.10), transparent 62%); }
   .hero-shot img {
     box-shadow:
