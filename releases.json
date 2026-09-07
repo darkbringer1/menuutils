@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.35",
+  "latest": "v0.0.36",
   "releases": [
+    {
+      "version": "0.0.36",
+      "tag": "v0.0.36",
+      "publishedAt": "2026-09-07T21:45:46Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.36/MenuUtils-0.0.36.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.36",
+      "sha256": "1afd5cbe55ed2342b6ab54cc9a0c1c6e9b58cb96304e1af417abbae2a84b6933",
+      "sections": [
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "fix: stop the App Uninstaller hang, the relaunch after quit, and a disk I/O trap"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.35",
       "tag": "v0.0.35",
