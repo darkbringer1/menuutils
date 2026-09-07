@@ -1,7 +1,28 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.34",
+  "latest": "v0.0.35",
   "releases": [
+    {
+      "version": "0.0.35",
+      "tag": "v0.0.35",
+      "publishedAt": "2026-09-07T14:50:43Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.35/MenuUtils-0.0.35.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.35",
+      "sha256": "c49f92d46d6d93b060f96fb196de8dafe42acbf9f1742357c482eb2ace5c0261",
+      "sections": [
+        {
+          "title": "Improvements",
+          "items": [
+            {
+              "title": "refactor(permissions): rebuild around capabilities and distribution mode"
+            },
+            {
+              "title": "refactor(ui): move Quit out of popover footers"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.34",
       "tag": "v0.0.34",
