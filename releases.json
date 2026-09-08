@@ -1,7 +1,36 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.38",
+  "latest": "v0.0.39",
   "releases": [
+    {
+      "version": "0.0.39",
+      "tag": "v0.0.39",
+      "publishedAt": "2026-09-08T23:20:08Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.39/MenuUtils-0.0.39.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.39",
+      "sha256": "cf0f427ac488137048cb5caa76a6bb726c7ed40eed23191857a200a89f474c9f",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "feat(transcription): add a chunked on-device SFSpeechRecognizer lane"
+            },
+            {
+              "title": "feat(transcription): suppress call-mode echo against the system-audio lane"
+            }
+          ]
+        },
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "fix(transcription): handle SpeechAnalyzer resource limits instead of gating"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.38",
       "tag": "v0.0.38",
