@@ -1,7 +1,44 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.36",
+  "latest": "v0.0.37",
   "releases": [
+    {
+      "version": "0.0.37",
+      "tag": "v0.0.37",
+      "publishedAt": "2026-09-08T10:18:50Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.37/MenuUtils-0.0.37.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.37",
+      "sha256": "b0b1e73c7ae8b91a45cff3178319054dbabeb0b6053e7087afa97703dc68c2c8",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "feat(app-uninstaller): remove root-owned leftovers through a privileged helper"
+            }
+          ]
+        },
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "fix: stop MenuUtils relaunching itself after quit"
+            },
+            {
+              "title": "fix(app-uninstaller): report why cleanup failed instead of a wall of NSError"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Merge branch 'fix/app-uninstaller-cleanup-failures'"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.36",
       "tag": "v0.0.36",
