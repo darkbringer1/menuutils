@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.39",
+  "latest": "v0.0.40",
   "releases": [
+    {
+      "version": "0.0.40",
+      "tag": "v0.0.40",
+      "publishedAt": "2026-09-14T07:51:24Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.40/MenuUtils-0.0.40.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.40",
+      "sha256": "4dda19b270eea4097d6ce84fe727c4fdd025d561cff74553aea227af31538bf0",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "feat(transcription): complete permission and device matrix validation (T3)"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.39",
       "tag": "v0.0.39",
