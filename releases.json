@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.40",
+  "latest": "v0.0.41",
   "releases": [
+    {
+      "version": "0.0.41",
+      "tag": "v0.0.41",
+      "publishedAt": "2026-09-15T13:40:48Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.41/MenuUtils-0.0.41.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.41",
+      "sha256": "49c9f0098688d20903e84f920d54066dd8f8ca797f6a9c7459c615755fef6699",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "feat(keyboard-cleaner): add keyboard cleaning mode and soft lock"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.40",
       "tag": "v0.0.40",
