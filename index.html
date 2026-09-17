@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MenuUtils — A modular macOS menu-bar utility</title>
-  <meta name="description" content="MenuUtils consolidates power-user macOS utilities — system monitoring, clipboard history, app uninstaller, and Xcode cleanup — into one menu-bar app.">
+  <meta name="description" content="MenuUtils consolidates power-user macOS utilities — system and network monitoring, clipboard history, on-device meeting transcription, app uninstaller, Xcode cleanup, and keyboard cleaning — into one menu-bar app.">
   <meta property="og:title" content="MenuUtils">
-  <meta property="og:description" content="A modular macOS menu-bar utility. System monitoring, clipboard history, app uninstaller, and Xcode cleanup in one app.">
+  <meta property="og:description" content="A modular macOS menu-bar utility. System monitoring, clipboard history, on-device meeting transcription, app uninstaller, Xcode cleanup, and keyboard cleaning in one app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuutils.dogukaan.dev">
   <link rel="stylesheet" href="/assets/style.css">
@@ -25,6 +25,8 @@
   <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 8.5L3 12L6.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 8.5L21 12L17.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="ic-paste-clipboard" viewBox="0 0 24 24"><path d="M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H15.5" stroke="currentColor" stroke-linecap="round"/><path d="M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z" stroke="currentColor" stroke-linecap="round"/></symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="13" rx="4" stroke="currentColor"/><path d="M5 11C5 14.866 8.134 18 12 18C15.866 18 19 14.866 19 11M12 18V22M8 22H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor"/><path d="M6 9.01L6.01 8.999M10 9.01L10.01 8.999M14 9.01L14.01 8.999M18 9.01L18.01 8.999M6 12.01L6.01 11.999M18 12.01L18.01 11.999M8 15.5H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -52,9 +54,9 @@
     <h1>One menu bar.<br><span class="grad">Every utility</span> you reach for.</h1>
     <p class="tagline">
       MenuUtils is a modular macOS menu-bar platform that consolidates the
-      power-user tools you keep open all day — system monitoring, clipboard
-      history, app uninstaller, and Xcode cleanup — into a
-      single, calm, native app.
+      power-user tools you keep open all day — system and network monitoring,
+      clipboard history, on-device meeting transcription, app and Xcode cleanup,
+      and a keyboard cleaning mode — into a single, calm, native app.
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" data-release-download href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.41/MenuUtils-0.0.41.dmg"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
@@ -63,7 +65,7 @@
     <span class="spec-line">macOS 26.0 or later · Apple Silicon</span>
 
     <div class="hero-facts">
-      <div><strong>5</strong> modules</div>
+      <div><strong>7</strong> modules</div>
       <div><strong>0</strong> accounts</div>
       <div><strong>0</strong> telemetry</div>
       <div>1 status item</div>
@@ -71,7 +73,7 @@
   </div>
 
   <div class="hero-shot">
-    <img src="/assets/screenshots/hero-stacked-modules.png" alt="MenuUtils menu bar panel showing Network Monitor, App Uninstaller, and Xcode Cleaner stacked in a single dropdown" width="824" height="1232" loading="eager" data-zoomable>
+    <img src="/assets/screenshots/hero-stacked-modules.png" alt="MenuUtils menu bar panel with App Uninstaller, Xcode Cleaner, and Keyboard Cleaner stacked in a single dropdown" width="824" height="1230" loading="eager" data-zoomable>
   </div>
 </section>
 
@@ -80,12 +82,12 @@
   <div class="section-head">
     <div class="eyebrow">The modules</div>
     <h2>What's inside</h2>
-    <p>Five modules, one host app. Each lives in the menu bar and can be turned on or off independently — actual panels from the running app, not mockups.</p>
+    <p>Seven modules, one host app. Each lives in the menu bar and can be turned on or off independently — actual panels from the running app, not mockups.</p>
   </div>
 
   <div class="feature-row">
     <div class="feature-shot">
-      <img src="/assets/screenshots/system-monitor-detail.png" alt="System Monitor detail window showing per-core CPU utilization, GPU load, and memory pressure" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/system-monitor-detail.png" alt="System Monitor window with CPU history and 18 per-core gauges, GPU utilization and VRAM, memory breakdown, and uptime, thermal state, and load average" width="1304" height="2804" loading="lazy" data-zoomable>
     </div>
     <div class="feature-copy">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cpu"/></svg> System Monitor</h3>
@@ -95,18 +97,20 @@
         <li>Fan speed &amp; temperature sensors</li>
         <li>Memory purge to reclaim RAM</li>
       </ul>
+      <span class="pill feature-edition">Direct download only</span>
     </div>
   </div>
 
   <div class="feature-row reverse">
     <div class="feature-shot">
-      <img src="/assets/screenshots/network-monitor-detail.png" alt="Network Monitor detail window showing a day of upload and download throughput as a line chart" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/network-monitor-detail.png" alt="Network Monitor window charting the last hour of download and upload on a hotspot, with line, bar, and area chart options and total, average, and peak speed" width="1504" height="1408" loading="lazy" data-zoomable>
     </div>
     <div class="feature-copy">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wifi"/></svg> Network Monitor</h3>
       <p>Live upload/download throughput in the menu bar, with hour/day/week/month history and per-interface breakdowns whenever you switch between Wi-Fi, Ethernet, and hotspot.</p>
       <ul class="feature-list">
         <li>Live speed with compaction-tiered history</li>
+        <li>Top apps by live download &amp; upload</li>
         <li>Per-connection-type usage totals</li>
         <li>Line, bar, and area chart views</li>
       </ul>
@@ -115,7 +119,7 @@
 
   <div class="feature-row">
     <div class="feature-shot">
-      <img src="/assets/screenshots/clipboard-manager.png" alt="Clipboard Manager showing searchable clipboard history with content-type filters" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/clipboard-manager.png" alt="Clipboard Manager panel with searchable history, filters for text, links, email, code, files, images, and cards, a blurred sensitive entry, and a preview of the selected image" width="1960" height="1400" loading="lazy" data-zoomable>
     </div>
     <div class="feature-copy">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-paste-clipboard"/></svg> Clipboard Manager</h3>
@@ -129,23 +133,39 @@
   </div>
 
   <div class="feature-row reverse">
-    <div class="feature-shot">
-      <img src="/assets/screenshots/app-uninstaller-detail.png" alt="App Uninstaller window listing installed applications with reclaimable size, sorted largest first" loading="lazy" data-zoomable>
+    <div class="feature-shot feature-shot-compact">
+      <img src="/assets/screenshots/transcription-popover.png" alt="Transcription menu bar panel in Call mode with microphone and system audio both ready, a Start Transcription button, and an on-device processing note" width="824" height="758" loading="lazy" data-zoomable>
     </div>
     <div class="feature-copy">
-      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg> App Uninstaller</h3>
-      <p>See every installed app sorted by size before you decide what goes. Moves the app bundle and its support files, caches, preferences, and containers to Trash — user-selected folders only.</p>
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-mic"/></svg> Meeting Transcription</h3>
+      <p>Transcribe a call or an in-person conversation as it happens, or import a recording you already have. Your microphone and system audio are recorded as separate lanes, so what you said and what the other side said never blur together — and speech is recognized on your Mac with Apple Speech or downloadable Parakeet models.</p>
       <ul class="feature-list">
-        <li>Size, name, or date sort across all apps</li>
-        <li>Support files, caches &amp; containers included</li>
-        <li>Nothing scanned outside folders you grant</li>
+        <li>Live captions, then a final pass rebuilt from the saved audio</li>
+        <li>Import audio &amp; video files, re-transcribe in another language</li>
+        <li>Call-mode echo suppression &amp; remote speaker separation</li>
       </ul>
     </div>
   </div>
 
   <div class="feature-row">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/preferences-app-uninstaller.png" alt="App Uninstaller settings showing granted access to application and library folders, optional Full Disk Access and App Management, and the optional privileged helper" width="2166" height="2334" loading="lazy" data-zoomable>
+    </div>
+    <div class="feature-copy">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg> App Uninstaller</h3>
+      <p>See every installed app sorted by size before you decide what goes. Moves the app bundle and its support files, caches, preferences, and containers to Trash. When a leftover is owned by root, an optional helper finishes the job — and when something can't be removed, you're told exactly why.</p>
+      <ul class="feature-list">
+        <li>Size, name, or date sort across all apps</li>
+        <li>Support files, caches &amp; containers included</li>
+        <li>Optional helper that can only move files to Trash</li>
+      </ul>
+      <span class="pill feature-edition">Direct download only</span>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
     <div class="feature-shot feature-shot-compact">
-      <img src="/assets/screenshots/xcode-cleaner-popover.png" alt="Xcode Cleaner menu bar popover showing 70.28 GB reclaimable across 5 selected targets" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/xcode-cleaner-popover.png" alt="Xcode Cleaner menu bar panel showing 90.52 GB reclaimable across 3 selected targets, with a warning that Xcode is running" width="824" height="512" loading="lazy" data-zoomable>
     </div>
     <div class="feature-copy">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg> Xcode Cleaner</h3>
@@ -153,8 +173,41 @@
       <ul class="feature-list">
         <li>Reclaim total shown before cleanup</li>
         <li>Blocks cleanup while Xcode is running</li>
-        <li>Reaches caches only via a granted bookmark</li>
+        <li>Touches only the Xcode folders it lists</li>
       </ul>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-shot">
+      <img src="/assets/screenshots/preferences-keyboard-cleaner.png" alt="Keyboard Cleaner settings with the Control-Option-Command-U unlock shortcut, cleaning duration and soft lock time limit choices, Accessibility granted, and recovery rules" width="2166" height="2334" loading="lazy" data-zoomable>
+    </div>
+    <div class="feature-copy">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-keyboard"/></svg> Keyboard Cleaner</h3>
+      <p>Wipe down your keyboard without typing into whatever is open. Clean Keyboard blocks keys, modifiers, and media keys for a timed session while the pointer stays free to hit Stop. Soft Lock covers every display until you press your unlock shortcut — a quick screen cover, not a replacement for the macOS lock screen.</p>
+      <ul class="feature-list">
+        <li>Timed cleaning sessions, 30 seconds to 5 minutes</li>
+        <li>Soft Lock with a custom unlock shortcut (default ⌃⌥⌘U)</li>
+        <li>Fails open: sleep, screen lock, or lost access restores input</li>
+      </ul>
+      <span class="pill feature-edition">Direct download only</span>
+    </div>
+  </div>
+</section>
+
+<!-- Menu bar panels -->
+<section class="block container">
+  <div class="section-head">
+    <div class="eyebrow">Menu bar</div>
+    <h2>A click away</h2>
+    <p>Every module opens a compact panel straight from the menu bar — live numbers and the one action you need — with Details one more click away when you want the full window.</p>
+  </div>
+  <div class="grid grid-2 grid-panels">
+    <div class="config-shot">
+      <img src="/assets/screenshots/system-monitor-popover.png" alt="System Monitor menu bar panel with CPU and GPU history, memory pressure with a Release RAM button, and free disk space" width="824" height="1230" loading="lazy" data-zoomable>
+    </div>
+    <div class="config-shot">
+      <img src="/assets/screenshots/network-monitor-popover.png" alt="Network Monitor menu bar panel showing live download and upload speed on a hotspot, speed history, and the top network consumers" width="824" height="1002" loading="lazy" data-zoomable>
     </div>
   </div>
 </section>
@@ -164,14 +217,14 @@
   <div class="section-head">
     <div class="eyebrow">Preferences</div>
     <h2>Yours to configure</h2>
-    <p>Every module ships with its own settings — menu bar display, thresholds, shortcuts — plus one place to see exactly what each module can access.</p>
+    <p>Every module ships with its own settings — menu bar display, thresholds, and a global shortcut to open it from anywhere — plus one place to see exactly what each module can access.</p>
   </div>
   <div class="grid grid-2">
     <div class="config-shot">
-      <img src="/assets/screenshots/preferences-appearance.png" alt="Preferences window showing six accent theme choices: Amber, Ocean, Forest, Violet, Graphite, and Rose" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/preferences-transcription.png" alt="Transcription settings with In Person and Call modes, language selection, live caption models, and final transcription models including Apple Speech and Parakeet" width="2166" height="2334" loading="lazy" data-zoomable>
     </div>
     <div class="config-shot">
-      <img src="/assets/screenshots/preferences-modules.png" alt="Preferences window listing all six modules with individual enable toggles" loading="lazy" data-zoomable>
+      <img src="/assets/screenshots/preferences-network-monitor.png" alt="Network Monitor settings with a global shortcut, menu bar display toggles, font and icon size, speed units, and color themes, next to all seven modules enabled in the sidebar" width="2166" height="2334" loading="lazy" data-zoomable>
     </div>
   </div>
 </section>
@@ -181,7 +234,7 @@
   <div class="section-head">
     <div class="eyebrow">Editions</div>
     <h2>Two editions, one codebase</h2>
-    <p>MenuUtils ships on two lanes. The direct download is the fuller product; the Mac App Store edition is sandboxed and trimmed where the sandbox forbids.</p>
+    <p>MenuUtils ships on two lanes. The direct download is the complete product; the Mac App Store edition is sandboxed and leaves out the modules that need access the sandbox can't grant.</p>
   </div>
   <div class="table-wrap">
     <table class="matrix">
@@ -189,13 +242,14 @@
         <tr><th>Capability</th><th>Direct download</th><th>Mac App Store</th></tr>
       </thead>
       <tbody>
-        <tr><td class="cap">CPU / memory / disk / GPU monitoring</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-        <tr><td class="cap">Fan speed &amp; temperature sensors</td><td class="yes">Yes</td><td class="no">No</td></tr>
-        <tr><td class="cap">Memory purge</td><td class="yes">Yes</td><td class="no">No</td></tr>
-        <tr><td class="cap">Global clipboard shortcut</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-        <tr><td class="cap">Crash auto-restart</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">System Monitor — CPU, GPU, memory, disk, sensors, memory purge</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">Network Monitor</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Clipboard Manager &amp; global shortcuts</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Meeting Transcription — microphone &amp; system audio</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">App Uninstaller &amp; root-owned leftover cleanup</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td class="cap">Xcode Cleaner</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td class="cap">Keyboard Cleaner &amp; Soft Lock</td><td class="yes">Yes</td><td class="no">No</td></tr>
         <tr><td class="cap">Self-update (Sparkle)</td><td class="yes">Yes</td><td class="no">Via App Store</td></tr>
-        <tr><td class="cap">App uninstaller &amp; Xcode cleanup</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
         <tr><td class="cap">Sandboxed</td><td class="no">No</td><td class="yes">Yes</td></tr>
         <tr><td class="cap">Notarized &amp; stapled</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
       </tbody>
@@ -213,7 +267,7 @@
   <div class="grid grid-2">
     <div class="card card-featured">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Direct download</h3>
-      <p>The full edition with sensors, memory purge, crash auto-restart, and Sparkle self-updates. Notarized Developer ID build.</p>
+      <p>The full edition with all seven modules — including System Monitor, App Uninstaller, and Keyboard Cleaner — and Sparkle self-updates. Notarized Developer ID build.</p>
       <div class="cta-row" style="margin-top:16px;">
         <a class="btn btn-primary" data-release-download href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.41/MenuUtils-0.0.41.dmg">Get the latest DMG</a>
         <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases">All releases</a>
@@ -221,7 +275,7 @@
     </div>
     <div class="card">
       <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shopping-bag"/></svg> Mac App Store</h3>
-      <p>The sandboxed edition. Sandboxed-safe features only; updates through the App Store.</p>
+      <p>The sandboxed edition with Network Monitor, Clipboard Manager, Meeting Transcription, and Xcode Cleaner. Updates through the App Store.</p>
       <div class="cta-row" style="margin-top:16px;">
         <span class="pill">Coming soon</span>
       </div>
@@ -258,7 +312,7 @@
   <div class="section-head">
     <div class="eyebrow">Privacy</div>
     <h2>Private by design</h2>
-    <p>MenuUtils does not collect, transmit, or share personal data. Clipboard history stays on your Mac. No accounts, no analytics, no tracking SDKs.</p>
+    <p>MenuUtils does not collect, transmit, or share personal data. Clipboard history, meeting recordings, and transcripts stay on your Mac, and speech is recognized on-device. No accounts, no analytics, no tracking SDKs.</p>
   </div>
   <a class="btn btn-secondary" href="/privacy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shield"/></svg> Read the privacy policy</a>
 </section>
