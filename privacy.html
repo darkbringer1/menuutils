@@ -27,12 +27,13 @@
 
 <article class="prose">
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: 2026-08-18</p>
+  <p class="meta">Effective date: 2026-09-17</p>
 
   <p class="lede">
     MenuUtils is a macOS menu-bar utility. The short version: <strong>MenuUtils
     does not collect, transmit, or share personal data. Everything you do in
-    the app stays on your Mac.</strong>
+    the app stays on your Mac.</strong> The app only goes online to check for
+    updates and to download speech models you choose to use.
   </p>
 
   <h2>Data we do not collect</h2>
@@ -54,18 +55,22 @@
     <thead><tr><th>Feature</th><th>What is stored</th><th>Where</th></tr></thead>
     <tbody>
       <tr><td>Clipboard Manager</td><td>Clipboard history entries you copy</td><td>On-device SQLite database (GRDB)</td></tr>
-      <tr><td>Meeting Transcription</td><td>Transcripts and session metadata</td><td>On-device SQLite database (GRDB)</td></tr>
+      <tr><td>Meeting Transcription</td><td>Transcripts, session metadata, and separate audio recordings of your microphone, system audio, or imported files</td><td>Files in the app's Application Support folder</td></tr>
+      <tr><td>Speech models</td><td>Speech recognition and speaker separation models you download</td><td>On-device model cache</td></tr>
       <tr><td>Preferences</td><td>Theme, per-module enablement, settings</td><td><code>UserDefaults</code></td></tr>
       <tr><td>Impact ledger</td><td>Aggregate counts (GB saved, items processed)</td><td>On-device storage</td></tr>
     </tbody>
   </table>
-  <p>The Clipboard Manager and Meeting Transcription features can hold sensitive content (for example, text you copy, or meeting audio you transcribe). This content is processed and stored <strong>only on your Mac</strong>. You can delete it at any time from within each module's settings.</p>
+  <p>The Clipboard Manager and Meeting Transcription features can hold sensitive content (for example, text you copy, or meeting audio you transcribe). This content is processed and stored <strong>only on your Mac</strong>. You can delete it at any time from within each module — deleting a meeting removes both its transcript and its audio recordings.</p>
 
   <h2>On-device processing</h2>
   <p>All processing happens on your Mac:</p>
   <ul>
-    <li><strong>Speech recognition</strong> in Meeting Transcription uses Apple's Speech framework with on-device recognition enabled. Live audio is captured by ScreenCaptureKit and transcribed locally; <strong>audio is never sent to a server</strong> for transcription.</li>
-    <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner, Network Monitor) only reads files in folders you explicitly grant access to through macOS security-scoped bookmarks. The app cannot read files you have not granted access to.</li>
+    <li><strong>Speech recognition</strong> in Meeting Transcription runs locally. Your microphone and your Mac's system audio are captured as separate tracks, then transcribed with Apple's Speech framework (with on-device recognition required) or with Parakeet models running on your Mac through Core ML. Speaker separation also runs locally. <strong>Audio and transcripts are never sent to a server.</strong></li>
+    <li><strong>Imported recordings</strong> are copied into the meeting's local archive (audio only — video frames are not kept) and transcribed the same way.</li>
+    <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner) only looks at application bundles, their support files, and Xcode developer folders. In the Mac App Store edition, it can only read folders you explicitly grant through macOS security-scoped bookmarks. In the direct download, deeper scanning uses the optional Full Disk Access and App Management permissions described below.</li>
+    <li><strong>Network Monitor</strong> reads per-app byte counters from the macOS <code>nettop</code> tool to show which apps use the network. It never inspects the content of your traffic.</li>
+    <li><strong>Keyboard Cleaner</strong> (direct download) sees key events only to block them and to recognize your unlock shortcut. Keystrokes are not recorded or stored.</li>
   </ul>
 
   <h2>Permissions the app requests</h2>
@@ -73,11 +78,14 @@
   <table>
     <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
     <tbody>
-      <tr><td>Microphone</td><td>Capture live audio for meeting transcription</td></tr>
-      <tr><td>Screen Recording</td><td>Capture system audio from meeting apps</td></tr>
-      <tr><td>Speech Recognition</td><td>Turn live audio into a transcript on-device</td></tr>
-      <tr><td>User-Selected File Access</td><td>Read and manage folders you choose (App Uninstaller, Xcode Cleaner)</td></tr>
-      <tr><td>App Management</td><td>Move selected application bundles to Trash (App Uninstaller)</td></tr>
+      <tr><td>Microphone</td><td>Capture your side of a conversation for meeting transcription</td></tr>
+      <tr><td>System Audio Recording</td><td>Capture the other participants in a call for meeting transcription</td></tr>
+      <tr><td>Speech Recognition</td><td>Transcribe on-device with Apple's speech engine, including languages covered only by offline dictation</td></tr>
+      <tr><td>User-Selected File Access</td><td>Read and manage folders you choose (Mac App Store edition)</td></tr>
+      <tr><td>Full Disk Access (optional)</td><td>Find support files in protected Library locations (App Uninstaller, direct download)</td></tr>
+      <tr><td>App Management (optional)</td><td>Move selected application bundles to Trash (App Uninstaller, direct download)</td></tr>
+      <tr><td>Accessibility</td><td>Block keyboard input during a cleaning session or soft lock (Keyboard Cleaner), and the clipboard shortcut in the direct download</td></tr>
+      <tr><td>Login Items &amp; Extensions (optional)</td><td>Approve the administrator helper that moves root-owned leftovers to your Trash (App Uninstaller, direct download)</td></tr>
     </tbody>
   </table>
   <p>Each permission is requested only when you enable the relevant feature, and each can be revoked at any time in <strong>System Settings → Privacy &amp; Security</strong>.</p>
@@ -91,7 +99,13 @@
   </ul>
   <p>None of the information accessed through these APIs is sent off-device.</p>
 
-  <h2>Software updates (direct-distribution build only)</h2>
+  <h2>Network connections</h2>
+  <p>MenuUtils makes only the connections below. None of them send personal data, clipboard content, audio, or transcripts.</p>
+
+  <h3>Speech model downloads</h3>
+  <p>Apple Speech uses language assets that macOS downloads and manages from Apple. If you choose a Parakeet model, or turn on speaker identification, MenuUtils downloads the model files from <a href="https://huggingface.co">Hugging Face</a> when you first use them. These are standard HTTPS file downloads; like any web request, they reveal your IP address to the host. After a model is downloaded, it runs entirely on your Mac.</p>
+
+  <h3>Software updates (direct-distribution build only)</h3>
   <p>The version of MenuUtils distributed directly from our website checks for updates using <a href="https://sparkle-project.org">Sparkle</a>. To check for updates, the app makes a standard HTTPS request to the update feed URL on our website. The only information exposed by this request is standard HTTP metadata (such as your IP address and a generic user-agent string) that any web request reveals to the host. <strong>No usage data, identifiers, or clipboard/transcript content is ever sent.</strong></p>
   <p>The Mac App Store version does not include this update mechanism; it updates through the App Store.</p>
 

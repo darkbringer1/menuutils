@@ -41,7 +41,7 @@
 
   <h2>First-run setup</h2>
   <p>MenuUtils lives in the menu bar. On first launch you'll be guided through enabling the modules you want and granting any permissions they need. Permissions can always be changed later in <strong>MenuUtils → Preferences → Permissions</strong> or in <strong>System Settings → Privacy &amp; Security</strong>.</p>
-  <p>Modules that read files (App Uninstaller, Xcode Cleaner) ask you to pick the folders they may access via macOS security-scoped bookmarks. They cannot read folders you have not granted.</p>
+  <p>In the direct build, App Uninstaller needs <strong>Full Disk Access</strong> and <strong>App Management</strong> to read other apps' data and move app bundles to Trash; Keyboard Cleaner needs <strong>Accessibility</strong>. In the App Store build, Xcode Cleaner asks you to pick the folders it may access via macOS security-scoped bookmarks and cannot read folders you have not granted.</p>
 
   <h2>Common issues</h2>
 
@@ -53,11 +53,14 @@
   <h3>Clipboard shortcut (⌘⇧V) doesn't work</h3>
   <p>The direct build uses an Accessibility event tap; grant <strong>Accessibility</strong> permission in System Settings → Privacy &amp; Security. The App Store build uses a Carbon hot key and does not need Accessibility access.</p>
 
-  <h3>Fan speed or temperature not showing</h3>
-  <p>Sensor reads require the direct (non-sandboxed) build. This is expected — the Mac App Store edition does not show SMC sensors.</p>
+  <h3>System Monitor, App Uninstaller, or Keyboard Cleaner is missing</h3>
+  <p>These modules need access the App Store sandbox does not allow, so they are only available in the direct download. Keyboard Cleaner is also off by default — turn it on in Preferences.</p>
 
   <h3>Transcription produces no text</h3>
-  <p>Grant <strong>Microphone</strong>, <strong>Screen Recording</strong> (for system audio), and <strong>Speech Recognition</strong> permissions. On-device recognition must be available for your selected language; pick a supported locale in Meeting Transcription settings.</p>
+  <p>Grant <strong>Microphone</strong> and, for calls, <strong>System Audio Recording</strong> in System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording. Apple Speech also needs <strong>Speech Recognition</strong>. The selected model must support your language: some languages are only available once their offline dictation assets are enabled in System Settings, and Parakeet models must be downloaded in Meeting Transcription settings first.</p>
+
+  <h3>Keyboard input stays blocked</h3>
+  <p>Clean Keyboard ends on its own when the timer runs out, and you can click <strong>Stop</strong> in the on-screen panel or the menu bar at any time. Soft Lock ends when you press your unlock shortcut (default ⌃⌥⌘U) or when its time limit is reached. Putting the Mac to sleep, locking the screen, or revoking Accessibility also restores input immediately.</p>
 
   <h2>Report a bug</h2>
   <p>Email <a href="mailto:menuutils@dogukaan.dev">menuutils@dogukaan.dev</a> with:</p>

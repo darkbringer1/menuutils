@@ -732,3 +732,9 @@ body.screenshot-viewer-open { overflow: hidden; }
 @media (prefers-color-scheme: light) {
   .err::before { background: radial-gradient(34rem 22rem at 50% 0%, rgba(225,29,72,.07), transparent 66%); }
 }
+
+/* Edition note under a feature's bullet list (e.g. "Direct download only") */
+.feature-copy .feature-edition { margin-top: 18px; }
+/* Menu bar panel pairs have different heights: center each panel instead of stretching it */
+.grid-panels .config-shot { align-items: center; justify-content: center; padding: var(--pad); }
+.grid-panels .config-shot .screenshot-button { width: auto; }
