@@ -1,7 +1,44 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.41",
+  "latest": "v0.0.42",
   "releases": [
+    {
+      "version": "0.0.42",
+      "tag": "v0.0.42",
+      "publishedAt": "2026-09-22T19:37:22Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.0.42/MenuUtils-0.0.42.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.0.42",
+      "sha256": "b9535902a59ed674effbfafc30992301b75d1a89be8456988f29135ac0fbbaea",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Add Open at Login setting to MenuUtils"
+            },
+            {
+              "title": "feat(release-site): rewrite marked download buttons to latest DMG"
+            }
+          ]
+        },
+        {
+          "title": "Improvements",
+          "items": [
+            {
+              "title": "update backlog"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Document keyboard cleaner references and future ideas"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.41",
       "tag": "v0.0.41",
