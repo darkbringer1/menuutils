@@ -1,7 +1,28 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.0",
+  "latest": "v0.8.1",
   "releases": [
+    {
+      "version": "0.8.1",
+      "tag": "v0.8.1",
+      "publishedAt": "2026-10-06T09:49:52Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.1/MenuUtils-0.8.1.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.1",
+      "sha256": "f3e8455f7d0150098658f2f7504ec0ce2829af833716349ae26e41f44d8d54ee",
+      "sections": [
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Build direct releases on a macos-26 runner"
+            },
+            {
+              "title": "Replace the app icon with the Evolved Grid design"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.0",
       "tag": "v0.8.0",
