@@ -1,7 +1,33 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.1",
+  "latest": "v0.8.2",
   "releases": [
+    {
+      "version": "0.8.2",
+      "tag": "v0.8.2",
+      "publishedAt": "2026-10-06T13:46:45Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.2/MenuUtils-0.8.2.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.2",
+      "sha256": "02ee2e261dbb98e2a505e11d99b457f720ce9d19357577541943c5261c276ed5",
+      "sections": [
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "Fix MenuBarHider hiding newly launched menu bar apps"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Use the Evolved Grid app icon in release page chrome"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.1",
       "tag": "v0.8.1",
