@@ -1,7 +1,42 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.0.42",
+  "latest": "v0.8.0",
   "releases": [
+    {
+      "version": "0.8.0",
+      "tag": "v0.8.0",
+      "publishedAt": "2026-10-06T06:59:54Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.0/MenuUtils-0.8.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.0",
+      "sha256": "822071aa059daa07a36d5bad148684236bbcf481d0a769b5f81d016c352ea930",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Add MenuBarHider module (macOS 27, direct build only)"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Hide macOS items and pick arrow icons in MenuBarHider"
+            },
+            {
+              "title": "Link the Preferences gallery from the release page menu"
+            },
+            {
+              "title": "Render release pages in the redesigned site markup"
+            },
+            {
+              "title": "Document the technical stack"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.0.42",
       "tag": "v0.0.42",
