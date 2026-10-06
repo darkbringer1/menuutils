@@ -1,100 +1,190 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — MenuUtils</title>
-  <meta name="description" content="Get help with MenuUtils, report a problem, or check system requirements.">
+  <meta name="description" content="Get help with MenuUtils: requirements, setup, permissions, common issues, and how to report a bug.">
+  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <script>(function(d){var r=d.documentElement;r.classList.remove('no-js');r.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');setTimeout(function(){if(!window.__muMotion)r.classList.remove('motion')},2500)}})(document);</script>
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="/assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
-<body>
+<body class="page-doc">
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M6 20L18 20"/><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"/></symbol>
+  <symbol id="ic-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M18 6H9M18 6V15"/></symbol>
+  <symbol id="ic-wifi" viewBox="0 0 24 24"><path d="M12 19.51L12.01 19.4989"/><path d="M2 8C8 3.5 16 3.5 22 8"/><path d="M5 12C9 9 15 9 19 12"/><path d="M8.5 15.5C10.7504 14.1 13.2498 14.0996 15.5001 15.5"/></symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24"><path d="M8 15.4V8.6C8 8.26863 8.26863 8 8.6 8H15.4C15.7314 8 16 8.26863 16 8.6V15.4C16 15.7314 15.7314 16 15.4 16H8.6C8.26863 16 8 15.7314 8 15.4Z"/><path d="M20 4.6V19.4C20 19.7314 19.7314 20 19.4 20H4.6C4.26863 20 4 19.7314 4 19.4V4.6C4 4.26863 4.26863 4 4.6 4H19.4C19.7314 4 20 4.26863 20 4.6Z"/><path d="M17 4V2M12 4V2M7 4V2M7 20V22M12 20V22M17 20V22M20 17H22M20 12H22M20 7H22M4 17H2M4 12H2M4 7H2"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9"/><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6"/></symbol>
+  <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5"/><path d="M6.5 8.5L3 12L6.5 15.5"/><path d="M17.5 8.5L21 12L17.5 15.5"/></symbol>
+  <symbol id="ic-paste-clipboard" viewBox="0 0 24 24"><path d="M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H15.5"/><path d="M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z"/></symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="13" rx="4"/><path d="M5 11C5 14.866 8.134 18 12 18C15.866 18 19 14.866 19 11M12 18V22M8 22H16"/></symbol>
+  <symbol id="ic-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9.01L6.01 8.999M10 9.01L10.01 8.999M14 9.01L14.01 8.999M18 9.01L18.01 8.999M6 12.01L6.01 11.999M18 12.01L18.01 11.999M8 15.5H16"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 13L9 17L19 7"/></symbol>
+  <symbol id="ic-copy" viewBox="0 0 24 24"><path d="M19.4 20H9.6C9.26863 20 9 19.7314 9 19.4V9.6C9 9.26863 9.26863 9 9.6 9H19.4C19.7314 9 20 9.26863 20 9.6V19.4C20 19.7314 19.7314 20 19.4 20Z"/><path d="M15 9V4.6C15 4.26863 14.7314 4 14.4 4H4.6C4.26863 4 4 4.26863 4 4.6V14.4C4 14.7314 4.26863 15 4.6 15H9"/></symbol>
+  <symbol id="ic-hider" viewBox="0 0 24 24"><path d="M15 6L9 12L15 18"/></symbol>
+  <symbol id="ic-menu-glyph" viewBox="0 0 24 24"><path d="M4 7H20M4 12H16M4 17H18"/></symbol>
+</svg>
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs><rect width="64" height="64" rx="12" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg> MenuUtils</a>
-    <span class="nav-spacer"></span>
-    <nav class="nav-links">
+<header class="menubar">
+  <div class="menubar-inner">
+    <a class="mb-brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg><span>MenuUtils</span></a>
+    <nav class="mb-menu" aria-label="Primary">
       <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
       <a href="/#download">Download</a>
+      <a href="/releases">Releases</a>
       <a href="/privacy">Privacy</a>
-      <a href="/support">Support</a>
+      <a href="/support" aria-current="page">Support</a>
     </nav>
+    <div class="mb-status">
+      <span class="mb-item mb-net" aria-hidden="true"><span>↑ <b data-readout="up">11.7</b> KB/s</span><span>↓ <b data-readout="down">15.8</b> KB/s</span></span>
+      <span class="mb-item mb-cpu" aria-hidden="true"><svg class="mb-spark" viewBox="0 0 30 14" preserveAspectRatio="none"><polyline data-spark points="0,10 30,10"/></svg><span><b data-readout="cpu">22</b>%</span></span>
+      <button class="mb-item mb-hider" type="button" aria-pressed="false" aria-label="Hide menu bar icons" title="Hide menu bar icons"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></button>
+      <button class="mb-item mb-toggle" type="button" aria-expanded="false" aria-controls="mb-pop"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-menu-glyph"/></svg><span class="mb-toggle-label">Menu</span><span class="visually-hidden">Open the MenuUtils menu</span></button>
+      <span class="mb-item mb-clock" data-clock aria-hidden="true">Tue 6 Oct 09:41</span>
+    </div>
+  </div>
+  <div class="mb-pop" id="mb-pop" hidden>
+    <div class="mb-pop-head">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg>
+      <div><strong>MenuUtils</strong><span>8 modules, 1 status item</span></div>
+      <span class="status-pill">Running</span>
+    </div>
+    <p class="mb-pop-label">Modules</p>
+    <ul class="mb-pop-modules">
+      <li><a href="/#m-system"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cpu"/></svg></span>System Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-network"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wifi"/></svg></span>Network Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-clipboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-paste-clipboard"/></svg></span>Clipboard Manager<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-transcription"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-mic"/></svg></span>Meeting Transcription<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-uninstaller"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg></span>App Uninstaller<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-xcode"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg></span>Xcode Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-keyboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-keyboard"/></svg></span>Keyboard Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-hider"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></span>Menu Bar Hider<span class="switch" aria-hidden="true"></span></a></li>
+    </ul>
+    <p class="mb-pop-label">Site</p>
+    <ul class="mb-pop-links">
+      <li><a href="/#preferences">Preferences</a></li>
+      <li><a href="/#editions">Editions</a></li>
+      <li><a href="/releases">Release notes</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/support">Support</a></li>
+    </ul>
+    <div class="mb-pop-foot">
+      <a class="btn btn-primary btn-block" href="/#download"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
+    </div>
   </div>
 </header>
 
-<main class="container" style="padding:64px 24px 0;">
+<main class="doc">
+  <div class="container">
+    <header class="doc-head">
+      <p class="eyebrow">Help</p>
+      <h1 data-split>Support</h1>
+      <p class="meta">Last updated: 2026-10-06</p>
+      <p class="lede">Running into trouble? Here's how to get help, and a few things worth knowing first.</p>
+    </header>
+    <div class="doc-grid">
+      <aside class="doc-toc" aria-label="On this page">
+        <p class="eyebrow">On this page</p>
+        <ol>
+          <li><a href="#requirements">System requirements</a></li>
+          <li><a href="#first-run">First-run setup</a></li>
+          <li><a href="#common-issues">Common issues</a></li>
+          <li><a href="#report-bug">Report a bug</a></li>
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#uninstall">Uninstall</a></li>
+        </ol>
+      </aside>
+      <article class="prose">
+      <section id="requirements">
+        <h2>System requirements</h2>
+<ul>
+          <li>macOS 26.0 or later</li>
+          <li>Apple Silicon (Mac with M-series chip)</li>
+          <li>Direct build: notarized and stapled, no sandbox</li>
+          <li>App Store build: sandboxed, reduced feature set</li>
+          <li>Menu Bar Hider: macOS 27 or later, direct build only</li>
+        </ul>
+      </section>
 
-<article class="prose">
-  <h1>Support</h1>
-  <p class="meta">Last updated: 2026-08-18</p>
+      <section id="first-run">
+        <h2>First-run setup</h2>
+<p>MenuUtils lives in the menu bar. On first launch you'll be guided through enabling the modules you want and granting any permissions they need. Permissions can always be changed later in <strong>MenuUtils → Preferences → Permissions</strong> or in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+        <p>In the direct build, App Uninstaller needs <strong>Full Disk Access</strong> and <strong>App Management</strong> to read other apps' data and move app bundles to Trash; Keyboard Cleaner needs <strong>Accessibility</strong>. In the App Store build, Xcode Cleaner asks you to pick the folders it may access via macOS security-scoped bookmarks and cannot read folders you have not granted.</p>
+      </section>
 
-  <p class="lede">Running into trouble? Here's how to get help and a few things worth knowing first.</p>
+      <section id="common-issues">
+        <h2>Common issues</h2>
+<h3>"MenuUtils can't be opened because it is from an unidentified developer"</h3>
+        <p>This means Gatekeeper did not see the notarization ticket. The direct download is notarized and stapled. Right-click the app and choose <strong>Open</strong> the first time, or run:</p>
+        <div class="cmd cmd-block"><code>xcrun stapler validate MenuUtils.app</code><button type="button" class="cmd-copy" data-copy aria-label="Copy command"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-copy"/></svg></button></div>
+        <p>If validation fails, re-download from the <a href="https://github.com/darkbringer1/menuutils/releases/latest">latest release</a> — the DMG may have been truncated.</p>
+        <h3>Clipboard shortcut (⌘⇧V) doesn't work</h3>
+        <p>The direct build uses an Accessibility event tap; grant <strong>Accessibility</strong> permission in System Settings → Privacy &amp; Security. The App Store build uses a Carbon hot key and does not need Accessibility access.</p>
+        <h3>System Monitor, App Uninstaller, Keyboard Cleaner, or Menu Bar Hider is missing</h3>
+        <p>These modules need access the App Store sandbox does not allow, so they are only available in the direct download. Keyboard Cleaner and Menu Bar Hider are also off by default — turn them on in Preferences.</p>
+        <h3>Transcription produces no text</h3>
+        <p>Grant <strong>Microphone</strong> and, for calls, <strong>System Audio Recording</strong> in System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording. Apple Speech also needs <strong>Speech Recognition</strong>. The selected model must support your language: some languages are only available once their offline dictation assets are enabled in System Settings, and Parakeet models must be downloaded in Meeting Transcription settings first.</p>
+        <h3>Menu Bar Hider says "Needs macOS 27" or an icon won't hide</h3>
+        <p>Hiding relies on menu bar controls added in macOS 27, and Menu Bar Hider needs <strong>Accessibility</strong> to see where icons sit. A few limits are worth knowing:</p>
+        <ul>
+          <li>Hiding works per app: an app with several icons hides or shows them together.</li>
+          <li>The first time a macOS item such as Wi-Fi sits left of the arrow, its icons flicker for about two seconds while MenuUtils works out how to hide it. Some macOS items cannot be controlled.</li>
+          <li>An app launched while icons are hidden stays hidden until every icon is next shown.</li>
+          <li>If a macOS update changes the underlying behavior, MenuUtils shows every icon instead of hiding them.</li>
+        </ul>
+        <h3>Keyboard input stays blocked</h3>
+        <p>Clean Keyboard ends on its own when the timer runs out, and you can click <strong>Stop</strong> in the on-screen panel or the menu bar at any time. Soft Lock ends when you press your unlock shortcut (default <kbd>⌃⌥⌘U</kbd>) or when its time limit is reached. Putting the Mac to sleep, locking the screen, or revoking Accessibility also restores input immediately.</p>
+      </section>
 
-  <h2>System requirements</h2>
-  <ul>
-    <li>macOS 26.0 or later</li>
-    <li>Apple Silicon (Mac with M-series chip)</li>
-    <li>Direct build: notarized and stapled, no sandbox</li>
-    <li>App Store build: sandboxed, reduced feature set</li>
-  </ul>
+      <section id="report-bug">
+        <h2>Report a bug</h2>
+<p>Email <a href="mailto:menuutils@dogukaan.dev">menuutils@dogukaan.dev</a> with:</p>
+        <ul>
+          <li>MenuUtils version (see Preferences → About)</li>
+          <li>Edition (direct download or Mac App Store)</li>
+          <li>macOS version and Mac model</li>
+          <li>Steps to reproduce</li>
+        </ul>
+        <p>Please do not send clipboard contents, transcripts, or other personal data — they are not needed to diagnose issues and we do not want them.</p>
+      </section>
 
-  <h2>First-run setup</h2>
-  <p>MenuUtils lives in the menu bar. On first launch you'll be guided through enabling the modules you want and granting any permissions they need. Permissions can always be changed later in <strong>MenuUtils → Preferences → Permissions</strong> or in <strong>System Settings → Privacy &amp; Security</strong>.</p>
-  <p>In the direct build, App Uninstaller needs <strong>Full Disk Access</strong> and <strong>App Management</strong> to read other apps' data and move app bundles to Trash; Keyboard Cleaner needs <strong>Accessibility</strong>. In the App Store build, Xcode Cleaner asks you to pick the folders it may access via macOS security-scoped bookmarks and cannot read folders you have not granted.</p>
+      <section id="updates">
+        <h2>Updates</h2>
+<p>The direct build checks for updates automatically once a day via Sparkle, or on demand from <strong>Preferences → Updates</strong>. The App Store build updates through the App Store.</p>
+      </section>
 
-  <h2>Common issues</h2>
+      <section id="uninstall">
+        <h2>Uninstall</h2>
+<p>MenuUtils can uninstall itself: open <strong>App Uninstaller</strong>, select MenuUtils, and move it to Trash. Preferences and on-device databases live in <code>~/Library/Application Support/MenuUtils</code> and <code>~/Library/Preferences/com.dogukaan.menukit.plist</code> — remove those to clear all data.</p>
+      </section>
 
-  <h3>"MenuUtils can't be opened because it is from an unidentified developer"</h3>
-  <p>This means Gatekeeper did not see the notarization ticket. The direct download is notarized and stapled. Right-click the app and choose <strong>Open</strong> the first time, or run:</p>
-  <p><code>xcrun stapler validate MenuUtils.app</code></p>
-  <p>If validation fails, re-download from the <a href="https://github.com/darkbringer1/menuutils/releases/latest">latest release</a> — the DMG may have been truncated.</p>
-
-  <h3>Clipboard shortcut (⌘⇧V) doesn't work</h3>
-  <p>The direct build uses an Accessibility event tap; grant <strong>Accessibility</strong> permission in System Settings → Privacy &amp; Security. The App Store build uses a Carbon hot key and does not need Accessibility access.</p>
-
-  <h3>System Monitor, App Uninstaller, or Keyboard Cleaner is missing</h3>
-  <p>These modules need access the App Store sandbox does not allow, so they are only available in the direct download. Keyboard Cleaner is also off by default — turn it on in Preferences.</p>
-
-  <h3>Transcription produces no text</h3>
-  <p>Grant <strong>Microphone</strong> and, for calls, <strong>System Audio Recording</strong> in System Settings → Privacy &amp; Security → Screen &amp; System Audio Recording. Apple Speech also needs <strong>Speech Recognition</strong>. The selected model must support your language: some languages are only available once their offline dictation assets are enabled in System Settings, and Parakeet models must be downloaded in Meeting Transcription settings first.</p>
-
-  <h3>Keyboard input stays blocked</h3>
-  <p>Clean Keyboard ends on its own when the timer runs out, and you can click <strong>Stop</strong> in the on-screen panel or the menu bar at any time. Soft Lock ends when you press your unlock shortcut (default ⌃⌥⌘U) or when its time limit is reached. Putting the Mac to sleep, locking the screen, or revoking Accessibility also restores input immediately.</p>
-
-  <h2>Report a bug</h2>
-  <p>Email <a href="mailto:menuutils@dogukaan.dev">menuutils@dogukaan.dev</a> with:</p>
-  <ul>
-    <li>MenuUtils version (see Preferences → About)</li>
-    <li>Edition (direct download or Mac App Store)</li>
-    <li>macOS version and Mac model</li>
-    <li>Steps to reproduce</li>
-  </ul>
-  <p>Please do not send clipboard contents, transcripts, or other personal data — they are not needed to diagnose issues and we do not want them.</p>
-
-  <h2>Updates</h2>
-  <p>The direct build checks for updates automatically once a day via Sparkle, or on demand from <strong>Preferences → Updates</strong>. The App Store build updates through the App Store.</p>
-
-  <h2>Uninstall</h2>
-  <p>MenuUtils can uninstall itself: open <strong>App Uninstaller</strong>, select MenuUtils, and move it to Trash. Preferences and on-device databases live in <code>~/Library/Application Support/MenuUtils</code> and <code>~/Library/Preferences/com.dogukaan.menukit.plist</code> — remove those to clear all data.</p>
-
-  <div class="callout">
-    MenuUtils collects no data, so there is no account to delete and no data to
-    request. Everything is on your Mac and removable by deleting the app and
-    its support files above.
+        <div class="callout"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shield"/></svg><p>MenuUtils collects no data, so there is no account to delete and no data to request. Everything is on your Mac and removable by deleting the app and its support files above.</p></div>
+      </article>
+    </div>
   </div>
-</article>
-
 </main>
 
-<footer class="site">
+<footer class="site-footer">
   <div class="container footer-inner">
-    <span>© 2026 MenuUtils. All rights reserved.</span>
-    <span>
-      <a href="/privacy">Privacy</a> ·
-      <a href="/support">Support</a> ·
-      <a href="https://github.com/darkbringer1/menuutils/releases">Releases</a>
-    </span>
+    <div class="footer-links">
+      <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
+      <a href="/releases">Releases</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="mailto:menuutils@dogukaan.dev">Contact</a>
+    </div>
+    <p class="footer-note">© 2026 MenuUtils. Made for the menu bar.</p>
   </div>
 </footer>
 

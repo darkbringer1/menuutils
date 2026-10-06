@@ -1,141 +1,234 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — MenuUtils</title>
   <meta name="description" content="MenuUtils does not collect, transmit, or share personal data. Everything stays on your Mac.">
+  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <script>(function(d){var r=d.documentElement;r.classList.remove('no-js');r.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');setTimeout(function(){if(!window.__muMotion)r.classList.remove('motion')},2500)}})(document);</script>
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="/assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
-<body>
+<body class="page-doc">
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M6 20L18 20"/><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"/></symbol>
+  <symbol id="ic-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M18 6H9M18 6V15"/></symbol>
+  <symbol id="ic-wifi" viewBox="0 0 24 24"><path d="M12 19.51L12.01 19.4989"/><path d="M2 8C8 3.5 16 3.5 22 8"/><path d="M5 12C9 9 15 9 19 12"/><path d="M8.5 15.5C10.7504 14.1 13.2498 14.0996 15.5001 15.5"/></symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24"><path d="M8 15.4V8.6C8 8.26863 8.26863 8 8.6 8H15.4C15.7314 8 16 8.26863 16 8.6V15.4C16 15.7314 15.7314 16 15.4 16H8.6C8.26863 16 8 15.7314 8 15.4Z"/><path d="M20 4.6V19.4C20 19.7314 19.7314 20 19.4 20H4.6C4.26863 20 4 19.7314 4 19.4V4.6C4 4.26863 4.26863 4 4.6 4H19.4C19.7314 4 20 4.26863 20 4.6Z"/><path d="M17 4V2M12 4V2M7 4V2M7 20V22M12 20V22M17 20V22M20 17H22M20 12H22M20 7H22M4 17H2M4 12H2M4 7H2"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9"/><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6"/></symbol>
+  <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5"/><path d="M6.5 8.5L3 12L6.5 15.5"/><path d="M17.5 8.5L21 12L17.5 15.5"/></symbol>
+  <symbol id="ic-paste-clipboard" viewBox="0 0 24 24"><path d="M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H15.5"/><path d="M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z"/></symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="13" rx="4"/><path d="M5 11C5 14.866 8.134 18 12 18C15.866 18 19 14.866 19 11M12 18V22M8 22H16"/></symbol>
+  <symbol id="ic-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9.01L6.01 8.999M10 9.01L10.01 8.999M14 9.01L14.01 8.999M18 9.01L18.01 8.999M6 12.01L6.01 11.999M18 12.01L18.01 11.999M8 15.5H16"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 13L9 17L19 7"/></symbol>
+  <symbol id="ic-copy" viewBox="0 0 24 24"><path d="M19.4 20H9.6C9.26863 20 9 19.7314 9 19.4V9.6C9 9.26863 9.26863 9 9.6 9H19.4C19.7314 9 20 9.26863 20 9.6V19.4C20 19.7314 19.7314 20 19.4 20Z"/><path d="M15 9V4.6C15 4.26863 14.7314 4 14.4 4H4.6C4.26863 4 4 4.26863 4 4.6V14.4C4 14.7314 4.26863 15 4.6 15H9"/></symbol>
+  <symbol id="ic-hider" viewBox="0 0 24 24"><path d="M15 6L9 12L15 18"/></symbol>
+  <symbol id="ic-menu-glyph" viewBox="0 0 24 24"><path d="M4 7H20M4 12H16M4 17H18"/></symbol>
+</svg>
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs><rect width="64" height="64" rx="12" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg> MenuUtils</a>
-    <span class="nav-spacer"></span>
-    <nav class="nav-links">
+<header class="menubar">
+  <div class="menubar-inner">
+    <a class="mb-brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg><span>MenuUtils</span></a>
+    <nav class="mb-menu" aria-label="Primary">
       <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
       <a href="/#download">Download</a>
-      <a href="/privacy">Privacy</a>
+      <a href="/releases">Releases</a>
+      <a href="/privacy" aria-current="page">Privacy</a>
       <a href="/support">Support</a>
     </nav>
+    <div class="mb-status">
+      <span class="mb-item mb-net" aria-hidden="true"><span>↑ <b data-readout="up">11.7</b> KB/s</span><span>↓ <b data-readout="down">15.8</b> KB/s</span></span>
+      <span class="mb-item mb-cpu" aria-hidden="true"><svg class="mb-spark" viewBox="0 0 30 14" preserveAspectRatio="none"><polyline data-spark points="0,10 30,10"/></svg><span><b data-readout="cpu">22</b>%</span></span>
+      <button class="mb-item mb-hider" type="button" aria-pressed="false" aria-label="Hide menu bar icons" title="Hide menu bar icons"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></button>
+      <button class="mb-item mb-toggle" type="button" aria-expanded="false" aria-controls="mb-pop"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-menu-glyph"/></svg><span class="mb-toggle-label">Menu</span><span class="visually-hidden">Open the MenuUtils menu</span></button>
+      <span class="mb-item mb-clock" data-clock aria-hidden="true">Tue 6 Oct 09:41</span>
+    </div>
+  </div>
+  <div class="mb-pop" id="mb-pop" hidden>
+    <div class="mb-pop-head">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg>
+      <div><strong>MenuUtils</strong><span>8 modules, 1 status item</span></div>
+      <span class="status-pill">Running</span>
+    </div>
+    <p class="mb-pop-label">Modules</p>
+    <ul class="mb-pop-modules">
+      <li><a href="/#m-system"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cpu"/></svg></span>System Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-network"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wifi"/></svg></span>Network Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-clipboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-paste-clipboard"/></svg></span>Clipboard Manager<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-transcription"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-mic"/></svg></span>Meeting Transcription<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-uninstaller"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg></span>App Uninstaller<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-xcode"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg></span>Xcode Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-keyboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-keyboard"/></svg></span>Keyboard Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-hider"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></span>Menu Bar Hider<span class="switch" aria-hidden="true"></span></a></li>
+    </ul>
+    <p class="mb-pop-label">Site</p>
+    <ul class="mb-pop-links">
+      <li><a href="/#preferences">Preferences</a></li>
+      <li><a href="/#editions">Editions</a></li>
+      <li><a href="/releases">Release notes</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/support">Support</a></li>
+    </ul>
+    <div class="mb-pop-foot">
+      <a class="btn btn-primary btn-block" href="/#download"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
+    </div>
   </div>
 </header>
 
-<main class="container" style="padding:64px 24px 0;">
+<main class="doc">
+  <div class="container">
+    <header class="doc-head">
+      <p class="eyebrow">Policy</p>
+      <h1 data-split>Privacy Policy</h1>
+      <p class="meta">Effective date: 2026-10-06</p>
+      <p class="lede">MenuUtils is a macOS menu-bar utility. The short version: <strong>MenuUtils does not collect, transmit, or share personal data. Everything you do in the app stays on your Mac.</strong> The app only goes online to check for updates and to download speech models you choose to use.</p>
+    </header>
+    <div class="doc-grid">
+      <aside class="doc-toc" aria-label="On this page">
+        <p class="eyebrow">On this page</p>
+        <ol>
+          <li><a href="#not-collected">Data we do not collect</a></li>
+          <li><a href="#local-data">Data stored locally on your Mac</a></li>
+          <li><a href="#on-device">On-device processing</a></li>
+          <li><a href="#permissions">Permissions the app requests</a></li>
+          <li><a href="#required-reason">Required Reason API declarations</a></li>
+          <li><a href="#network">Network connections</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
+      <article class="prose">
+      <section id="not-collected">
+        <h2>Data we do not collect</h2>
+<p>MenuUtils does <strong>not</strong> collect, aggregate, sell, share, or transmit:</p>
+        <ul>
+          <li>Personal identifiers (name, email, account details)</li>
+          <li>Device identifiers or advertising identifiers</li>
+          <li>Usage analytics or product telemetry</li>
+          <li>Crash reports (none are uploaded by the app)</li>
+          <li>Location data</li>
+          <li>Contact or calendar data</li>
+          <li>Any information about you to any third party</li>
+        </ul>
+        <p>The app has <strong>no accounts</strong>, <strong>no login</strong>, <strong>no advertising</strong>, and <strong>no third-party analytics or tracking SDKs</strong>.</p>
+      </section>
 
-<article class="prose">
-  <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: 2026-09-17</p>
+      <section id="local-data">
+        <h2>Data stored locally on your Mac</h2>
+<p>Some features store data on your Mac so they can function. This data never leaves your device:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Feature</th><th scope="col">What is stored</th><th scope="col">Where</th></tr></thead>
+            <tbody>
+              <tr><td>Clipboard Manager</td><td>Clipboard history entries you copy</td><td>On-device SQLite database (GRDB)</td></tr>
+              <tr><td>Meeting Transcription</td><td>Transcripts, session metadata, and separate audio recordings of your microphone, system audio, or imported files</td><td>Files in the app's Application Support folder</td></tr>
+              <tr><td>Speech models</td><td>Speech recognition and speaker separation models you download</td><td>On-device model cache</td></tr>
+              <tr><td>Preferences</td><td>Theme, per-module enablement, settings</td><td><code>UserDefaults</code></td></tr>
+              <tr><td>Impact ledger</td><td>Aggregate counts (GB saved, items processed)</td><td>On-device storage</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The Clipboard Manager and Meeting Transcription features can hold sensitive content (for example, text you copy, or meeting audio you transcribe). This content is processed and stored <strong>only on your Mac</strong>. You can delete it at any time from within each module — deleting a meeting removes both its transcript and its audio recordings.</p>
+      </section>
 
-  <p class="lede">
-    MenuUtils is a macOS menu-bar utility. The short version: <strong>MenuUtils
-    does not collect, transmit, or share personal data. Everything you do in
-    the app stays on your Mac.</strong> The app only goes online to check for
-    updates and to download speech models you choose to use.
-  </p>
+      <section id="on-device">
+        <h2>On-device processing</h2>
+<p>All processing happens on your Mac:</p>
+        <ul>
+          <li><strong>Speech recognition</strong> in Meeting Transcription runs locally. Your microphone and your Mac's system audio are captured as separate tracks, then transcribed with Apple's Speech framework (with on-device recognition required) or with Parakeet models running on your Mac through Core ML. Speaker separation also runs locally. <strong>Audio and transcripts are never sent to a server.</strong></li>
+          <li><strong>Imported recordings</strong> are copied into the meeting's local archive (audio only — video frames are not kept) and transcribed the same way.</li>
+          <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner) only looks at application bundles, their support files, and Xcode developer folders. In the Mac App Store edition, it can only read folders you explicitly grant through macOS security-scoped bookmarks. In the direct download, deeper scanning uses the optional Full Disk Access and App Management permissions described below.</li>
+          <li><strong>Network Monitor</strong> reads per-app byte counters from the macOS <code>nettop</code> tool to show which apps use the network. It never inspects the content of your traffic.</li>
+          <li><strong>Keyboard Cleaner</strong> (direct download) sees key events only to block them and to recognize your unlock shortcut. Keystrokes are not recorded or stored.</li>
+          <li><strong>Menu Bar Hider</strong> (direct download, macOS 27) reads where menu bar icons sit so the right ones are hidden. Nothing about those icons or their apps is stored or sent anywhere.</li>
+        </ul>
+      </section>
 
-  <h2>Data we do not collect</h2>
-  <p>MenuUtils does <strong>not</strong> collect, aggregate, sell, share, or transmit:</p>
-  <ul>
-    <li>Personal identifiers (name, email, account details)</li>
-    <li>Device identifiers or advertising identifiers</li>
-    <li>Usage analytics or product telemetry</li>
-    <li>Crash reports (none are uploaded by the app)</li>
-    <li>Location data</li>
-    <li>Contact or calendar data</li>
-    <li>Any information about you to any third party</li>
-  </ul>
-  <p>The app has <strong>no accounts</strong>, <strong>no login</strong>, <strong>no advertising</strong>, and <strong>no third-party analytics or tracking SDKs</strong>.</p>
+      <section id="permissions">
+        <h2>Permissions the app requests</h2>
+<p>MenuUtils requests these macOS permissions, each for a specific purpose:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Permission</th><th scope="col">Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>Microphone</td><td>Capture your side of a conversation for meeting transcription</td></tr>
+              <tr><td>System Audio Recording</td><td>Capture the other participants in a call for meeting transcription</td></tr>
+              <tr><td>Speech Recognition</td><td>Transcribe on-device with Apple's speech engine, including languages covered only by offline dictation</td></tr>
+              <tr><td>User-Selected File Access</td><td>Read and manage folders you choose (Mac App Store edition)</td></tr>
+              <tr><td>Full Disk Access (optional)</td><td>Find support files in protected Library locations (App Uninstaller, direct download)</td></tr>
+              <tr><td>App Management (optional)</td><td>Move selected application bundles to Trash (App Uninstaller, direct download)</td></tr>
+              <tr><td>Accessibility</td><td>Block keyboard input during a cleaning session or soft lock (Keyboard Cleaner), see where menu bar icons sit so the right ones are hidden (Menu Bar Hider), and the clipboard shortcut in the direct download</td></tr>
+              <tr><td>Login Items &amp; Extensions (optional)</td><td>Approve the administrator helper that moves root-owned leftovers to your Trash (App Uninstaller, direct download)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Each permission is requested only when you enable the relevant feature, and each can be revoked at any time in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+      </section>
 
-  <h2>Data stored locally on your Mac</h2>
-  <p>Some features store data on your Mac so they can function. This data never leaves your device:</p>
-  <table>
-    <thead><tr><th>Feature</th><th>What is stored</th><th>Where</th></tr></thead>
-    <tbody>
-      <tr><td>Clipboard Manager</td><td>Clipboard history entries you copy</td><td>On-device SQLite database (GRDB)</td></tr>
-      <tr><td>Meeting Transcription</td><td>Transcripts, session metadata, and separate audio recordings of your microphone, system audio, or imported files</td><td>Files in the app's Application Support folder</td></tr>
-      <tr><td>Speech models</td><td>Speech recognition and speaker separation models you download</td><td>On-device model cache</td></tr>
-      <tr><td>Preferences</td><td>Theme, per-module enablement, settings</td><td><code>UserDefaults</code></td></tr>
-      <tr><td>Impact ledger</td><td>Aggregate counts (GB saved, items processed)</td><td>On-device storage</td></tr>
-    </tbody>
-  </table>
-  <p>The Clipboard Manager and Meeting Transcription features can hold sensitive content (for example, text you copy, or meeting audio you transcribe). This content is processed and stored <strong>only on your Mac</strong>. You can delete it at any time from within each module — deleting a meeting removes both its transcript and its audio recordings.</p>
+      <section id="required-reason">
+        <h2>Required Reason API declarations</h2>
+<p>MenuUtils accesses a small number of macOS APIs that Apple requires to be declared in a privacy manifest (<code>PrivacyInfo.xcprivacy</code>). The approved reasons are:</p>
+        <ul>
+          <li><strong>UserDefaults</strong> (<code>CA92.1</code>) — storing the app's own preferences.</li>
+          <li><strong>Disk space</strong> (<code>85F4.1</code>) — displaying free and used disk space to you in System Monitor.</li>
+          <li><strong>File timestamps</strong> (<code>DDA9.1</code>, <code>3B52.1</code>) — showing and sorting by "last modified" in App Uninstaller, on files inside folders you granted access to.</li>
+        </ul>
+        <p>None of the information accessed through these APIs is sent off-device.</p>
+      </section>
 
-  <h2>On-device processing</h2>
-  <p>All processing happens on your Mac:</p>
-  <ul>
-    <li><strong>Speech recognition</strong> in Meeting Transcription runs locally. Your microphone and your Mac's system audio are captured as separate tracks, then transcribed with Apple's Speech framework (with on-device recognition required) or with Parakeet models running on your Mac through Core ML. Speaker separation also runs locally. <strong>Audio and transcripts are never sent to a server.</strong></li>
-    <li><strong>Imported recordings</strong> are copied into the meeting's local archive (audio only — video frames are not kept) and transcribed the same way.</li>
-    <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner) only looks at application bundles, their support files, and Xcode developer folders. In the Mac App Store edition, it can only read folders you explicitly grant through macOS security-scoped bookmarks. In the direct download, deeper scanning uses the optional Full Disk Access and App Management permissions described below.</li>
-    <li><strong>Network Monitor</strong> reads per-app byte counters from the macOS <code>nettop</code> tool to show which apps use the network. It never inspects the content of your traffic.</li>
-    <li><strong>Keyboard Cleaner</strong> (direct download) sees key events only to block them and to recognize your unlock shortcut. Keystrokes are not recorded or stored.</li>
-  </ul>
+      <section id="network">
+        <h2>Network connections</h2>
+<p>MenuUtils makes only the connections below. None of them send personal data, clipboard content, audio, or transcripts.</p>
+        <h3>Speech model downloads</h3>
+        <p>Apple Speech uses language assets that macOS downloads and manages from Apple. If you choose a Parakeet model, or turn on speaker identification, MenuUtils downloads the model files from <a href="https://huggingface.co">Hugging Face</a> when you first use them. These are standard HTTPS file downloads; like any web request, they reveal your IP address to the host. After a model is downloaded, it runs entirely on your Mac.</p>
+        <h3>Software updates (direct-distribution build only)</h3>
+        <p>The version of MenuUtils distributed directly from our website checks for updates using <a href="https://sparkle-project.org">Sparkle</a>. To check for updates, the app makes a standard HTTPS request to the update feed URL on our website. The only information exposed by this request is standard HTTP metadata (such as your IP address and a generic user-agent string) that any web request reveals to the host. <strong>No usage data, identifiers, or clipboard/transcript content is ever sent.</strong></p>
+        <p>The Mac App Store version does not include this update mechanism; it updates through the App Store.</p>
+      </section>
 
-  <h2>Permissions the app requests</h2>
-  <p>MenuUtils requests these macOS permissions, each for a specific purpose:</p>
-  <table>
-    <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td>Microphone</td><td>Capture your side of a conversation for meeting transcription</td></tr>
-      <tr><td>System Audio Recording</td><td>Capture the other participants in a call for meeting transcription</td></tr>
-      <tr><td>Speech Recognition</td><td>Transcribe on-device with Apple's speech engine, including languages covered only by offline dictation</td></tr>
-      <tr><td>User-Selected File Access</td><td>Read and manage folders you choose (Mac App Store edition)</td></tr>
-      <tr><td>Full Disk Access (optional)</td><td>Find support files in protected Library locations (App Uninstaller, direct download)</td></tr>
-      <tr><td>App Management (optional)</td><td>Move selected application bundles to Trash (App Uninstaller, direct download)</td></tr>
-      <tr><td>Accessibility</td><td>Block keyboard input during a cleaning session or soft lock (Keyboard Cleaner), and the clipboard shortcut in the direct download</td></tr>
-      <tr><td>Login Items &amp; Extensions (optional)</td><td>Approve the administrator helper that moves root-owned leftovers to your Trash (App Uninstaller, direct download)</td></tr>
-    </tbody>
-  </table>
-  <p>Each permission is requested only when you enable the relevant feature, and each can be revoked at any time in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+      <section id="children">
+        <h2>Children's privacy</h2>
+<p>MenuUtils is a developer/utility tool and is not directed at children. The app does not knowingly collect any data from anyone, including children.</p>
+      </section>
 
-  <h2>Required Reason API declarations</h2>
-  <p>MenuUtils accesses a small number of macOS APIs that Apple requires to be declared in a privacy manifest (<code>PrivacyInfo.xcprivacy</code>). The approved reasons are:</p>
-  <ul>
-    <li><strong>UserDefaults</strong> (<code>CA92.1</code>) — storing the app's own preferences.</li>
-    <li><strong>Disk space</strong> (<code>85F4.1</code>) — displaying free and used disk space to you in System Monitor.</li>
-    <li><strong>File timestamps</strong> (<code>DDA9.1</code>, <code>3B52.1</code>) — showing and sorting by "last modified" in App Uninstaller, on files inside folders you granted access to.</li>
-  </ul>
-  <p>None of the information accessed through these APIs is sent off-device.</p>
+      <section id="changes">
+        <h2>Changes to this policy</h2>
+<p>If this policy changes, the updated version will be posted on this page with a new effective date. For significant changes, the app will link to the updated policy from within the app.</p>
+      </section>
 
-  <h2>Network connections</h2>
-  <p>MenuUtils makes only the connections below. None of them send personal data, clipboard content, audio, or transcripts.</p>
+      <section id="contact">
+        <h2>Contact</h2>
+<p>If you have questions about this privacy policy, contact:</p>
+        <p><strong>MenuUtils</strong><br>Email: <a href="mailto:menuutils@dogukaan.dev">menuutils@dogukaan.dev</a></p>
+      </section>
 
-  <h3>Speech model downloads</h3>
-  <p>Apple Speech uses language assets that macOS downloads and manages from Apple. If you choose a Parakeet model, or turn on speaker identification, MenuUtils downloads the model files from <a href="https://huggingface.co">Hugging Face</a> when you first use them. These are standard HTTPS file downloads; like any web request, they reveal your IP address to the host. After a model is downloaded, it runs entirely on your Mac.</p>
-
-  <h3>Software updates (direct-distribution build only)</h3>
-  <p>The version of MenuUtils distributed directly from our website checks for updates using <a href="https://sparkle-project.org">Sparkle</a>. To check for updates, the app makes a standard HTTPS request to the update feed URL on our website. The only information exposed by this request is standard HTTP metadata (such as your IP address and a generic user-agent string) that any web request reveals to the host. <strong>No usage data, identifiers, or clipboard/transcript content is ever sent.</strong></p>
-  <p>The Mac App Store version does not include this update mechanism; it updates through the App Store.</p>
-
-  <h2>Children's privacy</h2>
-  <p>MenuUtils is a developer/utility tool and is not directed at children. The app does not knowingly collect any data from anyone, including children.</p>
-
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted on this page with a new effective date. For significant changes, the app will link to the updated policy from within the app.</p>
-
-  <h2>Contact</h2>
-  <p>If you have questions about this privacy policy, contact:</p>
-  <p><strong>MenuUtils</strong><br>Email: <a href="mailto:menuutils@dogukaan.dev">menuutils@dogukaan.dev</a></p>
-
-  <div class="callout">
-    This policy is mirrored in the app's Privacy Nutrition Label in App Store
-    Connect and in the on-device privacy manifest. If any of these three ever
-    disagree, the on-device behavior is authoritative.
+        <div class="callout"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shield"/></svg><p>This policy is mirrored in the app's Privacy Nutrition Label in App Store Connect and in the on-device privacy manifest. If any of these three ever disagree, the on-device behavior is authoritative.</p></div>
+      </article>
+    </div>
   </div>
-</article>
-
 </main>
 
-<footer class="site">
+<footer class="site-footer">
   <div class="container footer-inner">
-    <span>© 2026 MenuUtils. All rights reserved.</span>
-    <span>
-      <a href="/privacy">Privacy</a> ·
-      <a href="/support">Support</a> ·
-      <a href="https://github.com/darkbringer1/menuutils/releases">Releases</a>
-    </span>
+    <div class="footer-links">
+      <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
+      <a href="/releases">Releases</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="mailto:menuutils@dogukaan.dev">Contact</a>
+    </div>
+    <p class="footer-note">© 2026 MenuUtils. Made for the menu bar.</p>
   </div>
 </footer>
 

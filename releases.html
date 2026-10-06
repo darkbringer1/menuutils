@@ -1,138 +1,325 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Release notes — MenuUtils</title>
   <meta name="description" content="MenuUtils release notes and notarized direct downloads.">
+  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <script>(function(d){var r=d.documentElement;r.classList.remove('no-js');r.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');setTimeout(function(){if(!window.__muMotion)r.classList.remove('motion')},2500)}})(document);</script>
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="/assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
-<body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="/">MenuUtils</a>
-    <span class="nav-spacer"></span>
-    <nav class="nav-links">
-      <a href="/">Home</a>
+<body class="page-releases">
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M6 20L18 20"/><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5"/></symbol>
+  <symbol id="ic-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M18 6H9M18 6V15"/></symbol>
+  <symbol id="ic-wifi" viewBox="0 0 24 24"><path d="M12 19.51L12.01 19.4989"/><path d="M2 8C8 3.5 16 3.5 22 8"/><path d="M5 12C9 9 15 9 19 12"/><path d="M8.5 15.5C10.7504 14.1 13.2498 14.0996 15.5001 15.5"/></symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24"><path d="M8 15.4V8.6C8 8.26863 8.26863 8 8.6 8H15.4C15.7314 8 16 8.26863 16 8.6V15.4C16 15.7314 15.7314 16 15.4 16H8.6C8.26863 16 8 15.7314 8 15.4Z"/><path d="M20 4.6V19.4C20 19.7314 19.7314 20 19.4 20H4.6C4.26863 20 4 19.7314 4 19.4V4.6C4 4.26863 4.26863 4 4.6 4H19.4C19.7314 4 20 4.26863 20 4.6Z"/><path d="M17 4V2M12 4V2M7 4V2M7 20V22M12 20V22M17 20V22M20 17H22M20 12H22M20 7H22M4 17H2M4 12H2M4 7H2"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9"/><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6"/></symbol>
+  <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5"/><path d="M6.5 8.5L3 12L6.5 15.5"/><path d="M17.5 8.5L21 12L17.5 15.5"/></symbol>
+  <symbol id="ic-paste-clipboard" viewBox="0 0 24 24"><path d="M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H15.5"/><path d="M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z"/></symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="13" rx="4"/><path d="M5 11C5 14.866 8.134 18 12 18C15.866 18 19 14.866 19 11M12 18V22M8 22H16"/></symbol>
+  <symbol id="ic-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9.01L6.01 8.999M10 9.01L10.01 8.999M14 9.01L14.01 8.999M18 9.01L18.01 8.999M6 12.01L6.01 11.999M18 12.01L18.01 11.999M8 15.5H16"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 13L9 17L19 7"/></symbol>
+  <symbol id="ic-copy" viewBox="0 0 24 24"><path d="M19.4 20H9.6C9.26863 20 9 19.7314 9 19.4V9.6C9 9.26863 9.26863 9 9.6 9H19.4C19.7314 9 20 9.26863 20 9.6V19.4C20 19.7314 19.7314 20 19.4 20Z"/><path d="M15 9V4.6C15 4.26863 14.7314 4 14.4 4H4.6C4.26863 4 4 4.26863 4 4.6V14.4C4 14.7314 4.26863 15 4.6 15H9"/></symbol>
+  <symbol id="ic-hider" viewBox="0 0 24 24"><path d="M15 6L9 12L15 18"/></symbol>
+  <symbol id="ic-menu-glyph" viewBox="0 0 24 24"><path d="M4 7H20M4 12H16M4 17H18"/></symbol>
+</svg>
+
+<header class="menubar">
+  <div class="menubar-inner">
+    <a class="mb-brand" href="/"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg><span>MenuUtils</span></a>
+    <nav class="mb-menu" aria-label="Primary">
+      <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
       <a href="/#download">Download</a>
+      <a href="/releases" aria-current="page">Releases</a>
       <a href="/privacy">Privacy</a>
       <a href="/support">Support</a>
     </nav>
+    <div class="mb-status">
+      <span class="mb-item mb-net" aria-hidden="true"><span>↑ <b data-readout="up">11.7</b> KB/s</span><span>↓ <b data-readout="down">15.8</b> KB/s</span></span>
+      <span class="mb-item mb-cpu" aria-hidden="true"><svg class="mb-spark" viewBox="0 0 30 14" preserveAspectRatio="none"><polyline data-spark points="0,10 30,10"/></svg><span><b data-readout="cpu">22</b>%</span></span>
+      <button class="mb-item mb-hider" type="button" aria-pressed="false" aria-label="Hide menu bar icons" title="Hide menu bar icons"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></button>
+      <button class="mb-item mb-toggle" type="button" aria-expanded="false" aria-controls="mb-pop"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-menu-glyph"/></svg><span class="mb-toggle-label">Menu</span><span class="visually-hidden">Open the MenuUtils menu</span></button>
+      <span class="mb-item mb-clock" data-clock aria-hidden="true">Tue 6 Oct 09:41</span>
+    </div>
+  </div>
+  <div class="mb-pop" id="mb-pop" hidden>
+    <div class="mb-pop-head">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="url(#brandGrad)"/><g fill="#fff"><rect x="14" y="16" width="36" height="5" rx="2.5"/><rect x="14" y="27" width="28" height="5" rx="2.5" opacity="0.85"/><rect x="14" y="38" width="32" height="5" rx="2.5" opacity="0.7"/><circle cx="50" cy="29.5" r="3" fill="#30d158"/></g></svg>
+      <div><strong>MenuUtils</strong><span>8 modules, 1 status item</span></div>
+      <span class="status-pill">Running</span>
+    </div>
+    <p class="mb-pop-label">Modules</p>
+    <ul class="mb-pop-modules">
+      <li><a href="/#m-system"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-cpu"/></svg></span>System Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-network"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wifi"/></svg></span>Network Monitor<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-clipboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-paste-clipboard"/></svg></span>Clipboard Manager<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-transcription"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-mic"/></svg></span>Meeting Transcription<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-uninstaller"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-trash"/></svg></span>App Uninstaller<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-xcode"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg></span>Xcode Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-keyboard"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-keyboard"/></svg></span>Keyboard Cleaner<span class="switch" aria-hidden="true"></span></a></li>
+      <li><a href="/#m-hider"><span class="chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-hider"/></svg></span>Menu Bar Hider<span class="switch" aria-hidden="true"></span></a></li>
+    </ul>
+    <p class="mb-pop-label">Site</p>
+    <ul class="mb-pop-links">
+      <li><a href="/#preferences">Preferences</a></li>
+      <li><a href="/#editions">Editions</a></li>
+      <li><a href="/releases">Release notes</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/support">Support</a></li>
+    </ul>
+    <div class="mb-pop-foot">
+      <a class="btn btn-primary btn-block" href="/#download"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
+    </div>
   </div>
 </header>
-<main>
-  <section class="block container">
-    <div class="section-head">
-      <div class="eyebrow">Release history</div>
-      <h2>What's new in MenuUtils</h2>
-      <p>Every direct release is signed with Developer ID, notarized by Apple, and delivered through Sparkle.</p>
-    </div>
-    <div class="grid"><article class="card" id="v0.0.42">
-  <div class="eyebrow">September 22, 2026</div>
-  <h3>MenuUtils 0.0.42</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>Add Open at Login setting to MenuUtils</li>
-<li>feat(release-site): rewrite marked download buttons to latest DMG</li></ul><div class="eyebrow">Improvements</div><ul class="feature-list"><li>update backlog</li></ul><div class="eyebrow">Maintenance</div><ul class="feature-list"><li>Document keyboard cleaner references and future ideas</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.42/MenuUtils-0.0.42.dmg">Download 0.0.42</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.42">GitHub release</a>
+
+<main class="doc">
+  <div class="container">
+    <header class="doc-head">
+      <p class="eyebrow">Release history</p>
+      <h1 data-split>What's new in MenuUtils</h1>
+      <p class="lede">Every direct release is signed with Developer ID, notarized by Apple, and delivered through Sparkle.</p>
+    </header>
+    <ol class="release-list">
+      <li class="release" id="v0.0.42">
+        <div class="release-when">
+          <p class="release-version">0.0.42</p>
+          <p class="release-date">September 22, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.42</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li>Add Open at Login setting to MenuUtils</li>
+          <li><span class="change-scope">Release Site</span> Rewrite marked download buttons to latest DMG</li>
+          </ul>
+          <h3>Improvements</h3>
+          <ul class="change-list">
+          <li>update backlog</li>
+          </ul>
+          <h3>Maintenance</h3>
+          <ul class="change-list">
+          <li>Document keyboard cleaner references and future ideas</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.42/MenuUtils-0.0.42.dmg">Download 0.0.42</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.42">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>b9535902a59ed674effbfafc30992301b75d1a89be8456988f29135ac0fbbaea</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.41">
+        <div class="release-when">
+          <p class="release-version">0.0.41</p>
+          <p class="release-date">September 15, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.41</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Keyboard Cleaner</span> Add keyboard cleaning mode and soft lock</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.41/MenuUtils-0.0.41.dmg">Download 0.0.41</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.41">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>49c9f0098688d20903e84f920d54066dd8f8ca797f6a9c7459c615755fef6699</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.40">
+        <div class="release-when">
+          <p class="release-version">0.0.40</p>
+          <p class="release-date">September 14, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.40</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Transcription</span> Complete permission and device matrix validation (T3)</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.40/MenuUtils-0.0.40.dmg">Download 0.0.40</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.40">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>4dda19b270eea4097d6ce84fe727c4fdd025d561cff74553aea227af31538bf0</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.39">
+        <div class="release-when">
+          <p class="release-version">0.0.39</p>
+          <p class="release-date">September 8, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.39</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Transcription</span> Add a chunked on-device SFSpeechRecognizer lane</li>
+          <li><span class="change-scope">Transcription</span> Suppress call-mode echo against the system-audio lane</li>
+          </ul>
+          <h3>Fixes</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Transcription</span> Handle SpeechAnalyzer resource limits instead of gating</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.39/MenuUtils-0.0.39.dmg">Download 0.0.39</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.39">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>cf0f427ac488137048cb5caa76a6bb726c7ed40eed23191857a200a89f474c9f</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.38">
+        <div class="release-when">
+          <p class="release-version">0.0.38</p>
+          <p class="release-date">September 8, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.38</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Transcription</span> Import audio/video files and route by locale</li>
+          </ul>
+          <h3>Maintenance</h3>
+          <ul class="change-list">
+          <li>Merge branch &#x27;feat/transcription-file-import&#x27;</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.38/MenuUtils-0.0.38.dmg">Download 0.0.38</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.38">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>2d708acce9c548e14677469b8135fc2124ef04d4cd39c0a8662dd464ba27411c</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.37">
+        <div class="release-when">
+          <p class="release-version">0.0.37</p>
+          <p class="release-date">September 8, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.37</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">App Uninstaller</span> Remove root-owned leftovers through a privileged helper</li>
+          </ul>
+          <h3>Fixes</h3>
+          <ul class="change-list">
+          <li>Stop MenuUtils relaunching itself after quit</li>
+          <li><span class="change-scope">App Uninstaller</span> Report why cleanup failed instead of a wall of NSError</li>
+          </ul>
+          <h3>Maintenance</h3>
+          <ul class="change-list">
+          <li>Merge branch &#x27;fix/app-uninstaller-cleanup-failures&#x27;</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.37/MenuUtils-0.0.37.dmg">Download 0.0.37</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.37">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>b0b1e73c7ae8b91a45cff3178319054dbabeb0b6053e7087afa97703dc68c2c8</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.36">
+        <div class="release-when">
+          <p class="release-version">0.0.36</p>
+          <p class="release-date">September 7, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.36</h2>
+          <h3>Fixes</h3>
+          <ul class="change-list">
+          <li>Stop the App Uninstaller hang, the relaunch after quit, and a disk I/O trap</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.36/MenuUtils-0.0.36.dmg">Download 0.0.36</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.36">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>1afd5cbe55ed2342b6ab54cc9a0c1c6e9b58cb96304e1af417abbae2a84b6933</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.35">
+        <div class="release-when">
+          <p class="release-version">0.0.35</p>
+          <p class="release-date">September 7, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.35</h2>
+          <h3>Improvements</h3>
+          <ul class="change-list">
+          <li><span class="change-scope">Permissions</span> Rebuild around capabilities and distribution mode</li>
+          <li><span class="change-scope">UI</span> Move Quit out of popover footers</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.35/MenuUtils-0.0.35.dmg">Download 0.0.35</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.35">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>c49f92d46d6d93b060f96fb196de8dafe42acbf9f1742357c482eb2ace5c0261</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.34">
+        <div class="release-when">
+          <p class="release-version">0.0.34</p>
+          <p class="release-date">September 2, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.34</h2>
+          <h3>Maintenance</h3>
+          <ul class="change-list">
+          <li>Split live/final-pass transcription models, add non-blocking final pass and recording playback</li>
+          <li>Preserve microphone entitlement during release signing</li>
+          <li>Automate release notes and website publishing</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.34/MenuUtils-0.0.34.dmg">Download 0.0.34</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.34">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>fcc4ac8dfc083c8c6da43722da6eb529424476dae6a7145996e5e8dd1baf32c1</code></p>
+        </div>
+      </li>
+      <li class="release" id="v0.0.33">
+        <div class="release-when">
+          <p class="release-version">0.0.33</p>
+          <p class="release-date">September 1, 2026</p>
+        </div>
+        <div class="release-body">
+          <h2>MenuUtils 0.0.33</h2>
+          <h3>New</h3>
+          <ul class="change-list">
+          <li>Expose app uninstaller system permissions</li>
+          <li>Enable meeting transcription in release builds</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.33/MenuUtils-0.0.33.dmg">Download 0.0.33</a>
+            <a class="btn btn-ghost" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.33">GitHub release <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-up-right"/></svg></a>
+          </div>
+          <p class="checksum"><span>SHA-256</span> <code>ccaf98ff901a0ed015a046a22dcae155fd524c6b26a454344dd295ca24db6fd0</code></p>
+        </div>
+      </li>
+    </ol>
   </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>b9535902a59ed674effbfafc30992301b75d1a89be8456988f29135ac0fbbaea</code></p>
-</article><article class="card" id="v0.0.41">
-  <div class="eyebrow">September 15, 2026</div>
-  <h3>MenuUtils 0.0.41</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>feat(keyboard-cleaner): add keyboard cleaning mode and soft lock</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.41/MenuUtils-0.0.41.dmg">Download 0.0.41</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.41">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>49c9f0098688d20903e84f920d54066dd8f8ca797f6a9c7459c615755fef6699</code></p>
-</article><article class="card" id="v0.0.40">
-  <div class="eyebrow">September 14, 2026</div>
-  <h3>MenuUtils 0.0.40</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>feat(transcription): complete permission and device matrix validation (T3)</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.40/MenuUtils-0.0.40.dmg">Download 0.0.40</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.40">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>4dda19b270eea4097d6ce84fe727c4fdd025d561cff74553aea227af31538bf0</code></p>
-</article><article class="card" id="v0.0.39">
-  <div class="eyebrow">September 8, 2026</div>
-  <h3>MenuUtils 0.0.39</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>feat(transcription): add a chunked on-device SFSpeechRecognizer lane</li>
-<li>feat(transcription): suppress call-mode echo against the system-audio lane</li></ul><div class="eyebrow">Fixes</div><ul class="feature-list"><li>fix(transcription): handle SpeechAnalyzer resource limits instead of gating</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.39/MenuUtils-0.0.39.dmg">Download 0.0.39</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.39">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>cf0f427ac488137048cb5caa76a6bb726c7ed40eed23191857a200a89f474c9f</code></p>
-</article><article class="card" id="v0.0.38">
-  <div class="eyebrow">September 8, 2026</div>
-  <h3>MenuUtils 0.0.38</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>feat(transcription): import audio/video files and route by locale</li></ul><div class="eyebrow">Maintenance</div><ul class="feature-list"><li>Merge branch &#x27;feat/transcription-file-import&#x27;</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.38/MenuUtils-0.0.38.dmg">Download 0.0.38</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.38">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>2d708acce9c548e14677469b8135fc2124ef04d4cd39c0a8662dd464ba27411c</code></p>
-</article><article class="card" id="v0.0.37">
-  <div class="eyebrow">September 8, 2026</div>
-  <h3>MenuUtils 0.0.37</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>feat(app-uninstaller): remove root-owned leftovers through a privileged helper</li></ul><div class="eyebrow">Fixes</div><ul class="feature-list"><li>fix: stop MenuUtils relaunching itself after quit</li>
-<li>fix(app-uninstaller): report why cleanup failed instead of a wall of NSError</li></ul><div class="eyebrow">Maintenance</div><ul class="feature-list"><li>Merge branch &#x27;fix/app-uninstaller-cleanup-failures&#x27;</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.37/MenuUtils-0.0.37.dmg">Download 0.0.37</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.37">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>b0b1e73c7ae8b91a45cff3178319054dbabeb0b6053e7087afa97703dc68c2c8</code></p>
-</article><article class="card" id="v0.0.36">
-  <div class="eyebrow">September 7, 2026</div>
-  <h3>MenuUtils 0.0.36</h3>
-  <div class="eyebrow">Fixes</div><ul class="feature-list"><li>fix: stop the App Uninstaller hang, the relaunch after quit, and a disk I/O trap</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.36/MenuUtils-0.0.36.dmg">Download 0.0.36</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.36">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>1afd5cbe55ed2342b6ab54cc9a0c1c6e9b58cb96304e1af417abbae2a84b6933</code></p>
-</article><article class="card" id="v0.0.35">
-  <div class="eyebrow">September 7, 2026</div>
-  <h3>MenuUtils 0.0.35</h3>
-  <div class="eyebrow">Improvements</div><ul class="feature-list"><li>refactor(permissions): rebuild around capabilities and distribution mode</li>
-<li>refactor(ui): move Quit out of popover footers</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.35/MenuUtils-0.0.35.dmg">Download 0.0.35</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.35">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>c49f92d46d6d93b060f96fb196de8dafe42acbf9f1742357c482eb2ace5c0261</code></p>
-</article><article class="card" id="v0.0.34">
-  <div class="eyebrow">September 2, 2026</div>
-  <h3>MenuUtils 0.0.34</h3>
-  <div class="eyebrow">Maintenance</div><ul class="feature-list"><li>Split live/final-pass transcription models, add non-blocking final pass and recording playback</li>
-<li>Preserve microphone entitlement during release signing</li>
-<li>Automate release notes and website publishing</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.34/MenuUtils-0.0.34.dmg">Download 0.0.34</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.34">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>fcc4ac8dfc083c8c6da43722da6eb529424476dae6a7145996e5e8dd1baf32c1</code></p>
-</article><article class="card" id="v0.0.33">
-  <div class="eyebrow">September 1, 2026</div>
-  <h3>MenuUtils 0.0.33</h3>
-  <div class="eyebrow">New</div><ul class="feature-list"><li>Expose app uninstaller system permissions</li>
-<li>Enable meeting transcription in release builds</li></ul>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/darkbringer1/menuutils/releases/download/v0.0.33/MenuUtils-0.0.33.dmg">Download 0.0.33</a>
-    <a class="btn btn-secondary" href="https://github.com/darkbringer1/menuutils/releases/tag/v0.0.33">GitHub release</a>
-  </div>
-  <p class="meta" style="overflow-wrap:anywhere;">SHA-256: <code>ccaf98ff901a0ed015a046a22dcae155fd524c6b26a454344dd295ca24db6fd0</code></p>
-</article></div>
-  </section>
 </main>
-<footer class="site">
+
+<footer class="site-footer">
   <div class="container footer-inner">
-    <span>© 2026 MenuUtils. All rights reserved.</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/support">Support</a></span>
+    <div class="footer-links">
+      <a href="/#features">Features</a>
+      <a href="/#editions">Editions</a>
+      <a href="/releases">Releases</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="mailto:menuutils@dogukaan.dev">Contact</a>
+    </div>
+    <p class="footer-note">© 2026 MenuUtils. Made for the menu bar.</p>
   </div>
 </footer>
+
 </body>
 </html>
