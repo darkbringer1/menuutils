@@ -64,14 +64,14 @@
     cpu: { el: q('[data-readout="cpu"]'), value: 22, min: 6, max: 64, digits: 0 },
   };
   const spark = q("[data-spark]");
-  const history = Array.from({ length: 18 }, () => 14 + Math.random() * 16);
+  const cpuHistory = Array.from({ length: 18 }, () => 14 + Math.random() * 16);
 
   const drawSpark = () => {
     if (!spark) return;
-    const step = 30 / (history.length - 1);
+    const step = 30 / (cpuHistory.length - 1);
     spark.setAttribute(
       "points",
-      history.map((v, i) => `${(i * step).toFixed(1)},${(13 - (v / 70) * 12).toFixed(1)}`).join(" ")
+      cpuHistory.map((v, i) => `${(i * step).toFixed(1)},${(13 - (v / 70) * 12).toFixed(1)}`).join(" ")
     );
   };
 
@@ -100,8 +100,8 @@
       }
       r.value = target;
     });
-    history.push(readouts.cpu.value);
-    history.shift();
+    cpuHistory.push(readouts.cpu.value);
+    cpuHistory.shift();
     drawSpark();
   };
   if (readouts.cpu.el || readouts.up.el) {
