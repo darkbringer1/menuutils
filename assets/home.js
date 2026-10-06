@@ -538,7 +538,14 @@
         yoyo: true,
         stagger: 0.3,
       });
-      gsap.to(".icon-dot", { scale: 0.6, transformOrigin: "50% 50%", duration: 1.1, ease: "sine.inOut", repeat: -1, yoyo: true });
+      gsap.to(".icon-wave", {
+        scaleY: (i) => [1.6, 0.6, 0.8, 1.4][i],
+        duration: 0.9,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        stagger: 0.18,
+      });
     });
 
     mm.add(`(pointer: fine) and ${motionQuery}`, () => {
