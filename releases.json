@@ -1,7 +1,39 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.2",
+  "latest": "v0.8.3",
   "releases": [
+    {
+      "version": "0.8.3",
+      "tag": "v0.8.3",
+      "publishedAt": "2026-10-16T14:23:09Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.3/MenuUtils-0.8.3.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.3",
+      "sha256": "5d3f519224ee55c3a2cd7151d401ada8225030174bd2082a0f15956c2ec9e63c",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Add opt-in real-recording transcription reports"
+            },
+            {
+              "title": "Add Cactus Whistle as a final-pass transcription model"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Build Whistle only for Apple silicon"
+            },
+            {
+              "title": "Keep new menu bar icons hidden in MenuBarHider"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.2",
       "tag": "v0.8.2",
