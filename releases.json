@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.3",
+  "latest": "v0.8.4",
   "releases": [
+    {
+      "version": "0.8.4",
+      "tag": "v0.8.4",
+      "publishedAt": "2026-10-17T09:53:02Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.4/MenuUtils-0.8.4.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.4",
+      "sha256": "52e51ce5334e760f6748189db7943d64598d8259f5b35af21aefad983f9c61b8",
+      "sections": [
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "Fix MenuBarHider re-hiding icons moved out of the hidden section"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.3",
       "tag": "v0.8.3",
