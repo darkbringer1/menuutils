@@ -1116,6 +1116,8 @@ tbody th { font-weight: 500; }
 .footer-links a { color: var(--fg-2); font-size: 14px; }
 .footer-links a:hover { color: var(--fg); }
 .footer-note { margin: 0; font: 500 12.5px/1.6 var(--mono); color: var(--fg-3); }
+.footer-note a { color: var(--fg-2); }
+.footer-note a:hover { color: var(--fg); }
 .footer-mark {
   margin-top: clamp(32px, 5vw, 64px);
   overflow: hidden;
