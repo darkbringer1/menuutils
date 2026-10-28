@@ -89,7 +89,7 @@
     <header class="doc-head">
       <p class="eyebrow">Policy</p>
       <h1 data-split>Privacy Policy</h1>
-      <p class="meta">Effective date: 2026-10-06</p>
+      <p class="meta">Effective date: 2026-10-28</p>
       <p class="lede">MenuUtils is a macOS menu-bar utility. The short version: <strong>MenuUtils does not collect, transmit, or share personal data. Everything you do in the app stays on your Mac.</strong> The app only goes online to check for updates and to download speech models you choose to use.</p>
     </header>
     <div class="doc-grid">
@@ -145,7 +145,7 @@
         <h2>On-device processing</h2>
 <p>All processing happens on your Mac:</p>
         <ul>
-          <li><strong>Speech recognition</strong> in Meeting Transcription runs locally. Your microphone and your Mac's system audio are captured as separate tracks, then transcribed with Apple's Speech framework (with on-device recognition required) or with Parakeet models running on your Mac through Core ML. Speaker separation also runs locally. <strong>Audio and transcripts are never sent to a server.</strong></li>
+          <li><strong>Speech recognition</strong> in Meeting Transcription runs locally. Your microphone and your Mac's system audio are captured as separate tracks, then transcribed with Apple's Speech framework (with on-device recognition required) or with Parakeet models running on your Mac through Core ML. On Apple silicon, Cactus Whistle can run the final transcription locally through the Needle runtime. Speaker separation also runs locally. <strong>Audio and transcripts are never sent to a server.</strong></li>
           <li><strong>Imported recordings</strong> are copied into the meeting's local archive (audio only — video frames are not kept) and transcribed the same way.</li>
           <li><strong>File inspection</strong> (App Uninstaller, Xcode Cleaner) only looks at application bundles, their support files, and Xcode developer folders. In the Mac App Store edition, it can only read folders you explicitly grant through macOS security-scoped bookmarks. In the direct download, deeper scanning uses the optional Full Disk Access and App Management permissions described below.</li>
           <li><strong>Network Monitor</strong> reads per-app byte counters from the macOS <code>nettop</code> tool to show which apps use the network. It never inspects the content of your traffic.</li>
@@ -190,7 +190,7 @@
         <h2>Network connections</h2>
 <p>MenuUtils makes only the connections below. None of them send personal data, clipboard content, audio, or transcripts.</p>
         <h3>Speech model downloads</h3>
-        <p>Apple Speech uses language assets that macOS downloads and manages from Apple. If you choose a Parakeet model, or turn on speaker identification, MenuUtils downloads the model files from <a href="https://huggingface.co">Hugging Face</a> when you first use them. These are standard HTTPS file downloads; like any web request, they reveal your IP address to the host. After a model is downloaded, it runs entirely on your Mac.</p>
+        <p>Apple Speech uses language assets that macOS downloads and manages from Apple. If you choose a Parakeet model or Cactus Whistle, or turn on speaker identification, MenuUtils downloads the model files from <a href="https://huggingface.co">Hugging Face</a> when you first use them. Whistle’s model comes from the Cactus-Compute repository; the app verifies its pinned size and SHA-256 checksum before installing it. These are standard HTTPS file downloads; like any web request, they reveal your IP address to the host. After a model is downloaded, it runs entirely on your Mac.</p>
         <h3>Software updates (direct-distribution build only)</h3>
         <p>The version of MenuUtils distributed directly from our website checks for updates using <a href="https://sparkle-project.org">Sparkle</a>. To check for updates, the app makes a standard HTTPS request to the update feed URL on our website. The only information exposed by this request is standard HTTP metadata (such as your IP address and a generic user-agent string) that any web request reveals to the host. <strong>No usage data, identifiers, or clipboard/transcript content is ever sent.</strong></p>
         <p>The Mac App Store version does not include this update mechanism; it updates through the App Store.</p>
