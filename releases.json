@@ -1,7 +1,53 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.4",
+  "latest": "v0.8.5",
   "releases": [
+    {
+      "version": "0.8.5",
+      "tag": "v0.8.5",
+      "publishedAt": "2026-11-21T18:29:43Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.5/MenuUtils-0.8.5.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.5",
+      "sha256": "4071167daf4652242ca2f8ffa316fd91df174c93de430ca1d3bc29128b4acf87",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Reset learned icon positions in Menu Bar Hider settings to recalibrate your menu bar layout anytime."
+            }
+          ]
+        },
+        {
+          "title": "Improved",
+          "items": [
+            {
+              "title": "Refined MenuUtils preferences, onboarding, theme picker, and menu bar popovers for clearer hierarchy in Light and Dark Mode."
+            },
+            {
+              "title": "Rebuilt Menu Bar Hider tracking to stay accurate across multi-display setups, camera notches, wake, screen unlock, and live drags."
+            },
+            {
+              "title": "Polished Meeting Transcription views, model labels, mini-player controls, and empty transcript states."
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "title": "Fixed Menu Bar Hider icons reappearing behind the hidden arrow or right-side items toggling unexpectedly when hiding."
+            },
+            {
+              "title": "Fixed opening the icon picker in Preferences breaking the window height and fixed sibling menu bar popovers overlapping."
+            },
+            {
+              "title": "Fixed a macOS 27 crash when quitting MenuUtils after opening a menu bar popover."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.4",
       "tag": "v0.8.4",
