@@ -1,7 +1,53 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.5",
+  "latest": "v0.8.6",
   "releases": [
+    {
+      "version": "0.8.6",
+      "tag": "v0.8.6",
+      "publishedAt": "2026-11-22T11:55:59Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.6/MenuUtils-0.8.6.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.6",
+      "sha256": "ed79ebe49e8eaec01163a2078e38b2d84d8ed593381dab6efbf934adff90c735",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Added Nemotron Unified ASR 0.6B for multilingual live captions across 25 European languages."
+            },
+            {
+              "title": "Added Cohere Transcribe 2B for high-accuracy on-device final transcription across 14 languages, including Arabic, CJK, and Vietnamese."
+            },
+            {
+              "title": "Added automatic live speaker echo suppression in Call mode when using speakers, automatically bypassing when headphones are connected."
+            },
+            {
+              "title": "Added a collapsible, resizable sidebar (Option-Command-S) to the Meeting Transcription workspace."
+            }
+          ]
+        },
+        {
+          "title": "Improved",
+          "items": [
+            {
+              "title": "Unified permissions across all modules with live refresh on return from System Settings and direct Speech Recognition controls."
+            },
+            {
+              "title": "Hid redundant folder-access setup prompts in direct builds and cleaned up popover scrollbars."
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "title": "Fixed folder-access picker failing validation by opening directly in the requested folder or its nearest existing parent."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.5",
       "tag": "v0.8.5",
