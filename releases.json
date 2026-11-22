@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.6",
+  "latest": "v0.8.7",
   "releases": [
+    {
+      "version": "0.8.7",
+      "tag": "v0.8.7",
+      "publishedAt": "2026-11-22T12:24:38Z",
+      "downloadURL": "https://github.com/darkbringer1/menuutils/releases/download/v0.8.7/MenuUtils-0.8.7.dmg",
+      "releaseURL": "https://github.com/darkbringer1/menuutils/releases/tag/v0.8.7",
+      "sha256": "81e281e55fc1c618688bc1f799ee749fe953eaace5438bc379c3e311f6c90335",
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "title": "Fixed menu bar popovers showing a legacy vertical scrollbar gutter on macOS by suppressing scroll indicators unconditionally."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.6",
       "tag": "v0.8.6",
